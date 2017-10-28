@@ -4,9 +4,17 @@ import comparison_topic
 from article_scraper import article_scrape
 import re
 
-url = "http://www.bbc.co.uk/news/world-europe-41785292/"
+#testurl = "http://www.bbc.co.uk/news/world-europe-41785292/"
 
-def main(url):
+def blackList(url):
+    socialNetworks = ["facebook.com", "twitter.com", "tumblr.com", "instagram.com", "pinterest.com", "4chan.org","reddit.com", "myspace.com","linkedin.com"]
+    for network in socialNetworks:
+        if network in url:
+            return True
+    return False
+
+
+def fakeNews(url):
 
     score = 0
 
@@ -71,5 +79,5 @@ def main(url):
 
 
 
-if __name__ == "__main__":
-    main(url)
+#if __name__ == "__main__":
+#    main(url)

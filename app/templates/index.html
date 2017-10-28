@@ -30,8 +30,11 @@
                       <input type="submit" class = "button-primary">
                   </form>
                   {% if result %}
-                  {% if result.status == "real"%}
-                    <br><h2> This page is genuine news! </h2><br><br>
+                  {% if result.status == "network" %}
+                  <br><h2>Not a Valid Input</h2>
+                  <br><h4> The link provided links to a social media site and therefore is not a news article</h4>
+                  {% elif result.status == "real"%}
+                    <br><h2> The <a href = {{ request.form['input'] }}></a>page </a> is genuine news! </h2><br><br>
                     <div class = "three columns offset-by-two">
                             <p class = "percentage" style="font-size:50px"> {{ result.value }} % </p>
                         </div>

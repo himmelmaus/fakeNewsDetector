@@ -11,11 +11,13 @@ import fakenews
 app = Flask(__name__)
 
 def real(url): #placeholder function before parsing url input
+    if fakenews.blackList(url):
+        return {'status':'network'}
     try:
         n = fakenews.fakeNews(url)
     except:
         print('a')
-        raise
+        #raise
         return {'status':"oops"}
     try:
         if n.lower() == "trump":
@@ -24,12 +26,12 @@ def real(url): #placeholder function before parsing url input
         pass
     try:
         if n > 50:
-            return {'status':"fake", 'value': int((n-50)*2)}
+            return {'status':"fake", 'value': int((n-5)*20)}
         elif n < 50:
-            return {'status':"real", 'value':int(n*2)}
+            return {'status':"real", 'value':int(n*10)}
     except:
         print ('b')
-        raise
+        #raise
         return {'status':"oops"}
 
 
