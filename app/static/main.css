@@ -3,13 +3,25 @@ body{
     color: #7575a3;
     background-color:#f0f0f8;
 }
+a{
+    text-decoration: none;
+    color: #fff; 
+}
+a:hover{
+    color:#000;
+}
 
-/*input {
+.twitter-timeline{
+    height: 300px;
+    margin-top: -20px;
+}
+
+footer{
+    width: 200%;
+    font-size: 8px;
     position: absolute;
-    width: 30%;
-    margin-right: 25%;
-    margin-length: 25%;
-}*/
+    margin-bottom: 5px;
+}
 input {
     color: #7575a3;
     position: static;
@@ -33,6 +45,27 @@ input {
     border-width: 12px;
     border-radius: 12%;
     text-align: center;
+}
+.three.columns{
+    text-align: center;
+    font-size:80px;
+}
+.five.columns{
+    background-color:#00f0ff;
+}
+#realdescription{
+    height:150px;
+    text-align: center;
+}
+#realpercentage {
+    height: 150px;
+    background-color:#dff0db;
+    color:#99ff99;
+}
+#positivity {
+    height: 150px;
+    background-color: yellow;
+    margin-left: 20%;
 }
 .container {
     /*background-color: #000;*/

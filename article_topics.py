@@ -9,10 +9,13 @@ from gensim import corpora
 # Base code from: https://www.analyticsvidhya.com/blog/2016/08/beginners-guide-to-topic-modeling-in-python/
 
 class OnStart:
+
+	def __init__(self):
+		pass
 	# Outputs around 6 words that describes the topic of the article
-	def FindTopics():
+	def FindTopics(self, doc_complete):
 		# Present the article in a sentence per new line
-		doc_complete = open("text.txt", "r").readlines()
+		#doc_complete = open("text.txt", "r").readlines() 
 
 		# Lists of unnecessary words, used in def clean() to clean the text from these words
 		stop = set(stopwords.words('english'))
@@ -64,6 +67,7 @@ class OnStart:
 
 		# Decending sorting order
 		most_popular_topics = sorted(pairs_dictionary, key=pairs_dictionary.get, reverse=True)
+		print(most_popular_topics)
 		return most_popular_topics
 
 	# Used to find names and any other "PERSON" tags in the text
@@ -84,4 +88,4 @@ class OnStart:
 		return names
 
 if __name__ == "__main__":
-	OnStart()
+	OnStart.FindTopics()
