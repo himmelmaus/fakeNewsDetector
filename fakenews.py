@@ -1,6 +1,7 @@
 import machine
 import article_topics
 import comparison_topic
+import sentiment_analysis
 from article_scraper import article_scrape
 import re
 
@@ -73,7 +74,9 @@ def fakeNews(url):
 
     scoring = comparison_topic.Comparison
     #print(titles)
-    return scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles)
+    negativity = sentiment_analysis.Model
+    return scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles), negativity.startModel(mainArticleContent)
+
 
 
 
