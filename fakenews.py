@@ -39,6 +39,13 @@ def fakeNews(url):
     # initiate the class
     topics = article_topics.OnStart()
 
+    namestocheck = article_topics.OnStart.FindNames()
+
+    PersonBlacklist = [("Alex", "Jones"), ("Tom", "Cruise"), ("Adolf", "Hitler"), ("Findlay", "Smith")]
+    for name in namestocheck:
+        if name in PersonBlacklist:
+            score += 20.0
+
     # get article you are evaluating text
     mainArticleContent = article_scrape(url)
 
@@ -75,7 +82,8 @@ def fakeNews(url):
     scoring = comparison_topic.Comparison
     #print(titles)
     negativity = sentiment_analysis.Model
-    return scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles), negativity.startModel(mainArticleContent)
+
+    return score+scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles), negativity.startModel(mainArticleContent)
 
 
 
