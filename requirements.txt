@@ -3,3 +3,8 @@ nltk == 3.2.5
 Gensim == 3.0.1
 numpy == 1.13.1
 scipy == 1.0.0
+newspaper3k == 0.2.5
+lxml == 4.1.0
+requests == 2.18.4
+bs4 ==0.0.1
+
