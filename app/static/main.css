@@ -3,13 +3,10 @@ body{
     color: #7575a3;
     background-color:#f0f0f8;
 }
-a {
-    color: #33C3f0; 
+#bork {
+    color: blue; 
     text-decoration: none;
   }
-a:hover{
-    color:#000;
-}
 
 .twitter-timeline{
     height: 300px;
