@@ -82,10 +82,12 @@ def fakeNews(url):
 
     res = scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles)
      
-    PersonBlacklist = [("Alex", "Jones"), ("Tom", "Cruise"), ("Adolf", "Hitler"), ("Findlay", "Smith")]
-    for person in PersonBlacklist:
-        if (person[0] == namestocheck[0]) and (person[1] == namestocheck[1]):
-            score += 20.0
+    #TODO: get rokas or karolis to remove this properly bc it just ain't workin'
+    
+    #PersonBlacklist = [("Alex", "Jones"), ("Tom", "Cruise"), ("Adolf", "Hitler"), ("Findlay", "Smith")]
+    #for person in PersonBlacklist:
+    #    if (person[0] == namestocheck[0]) and (person[1] == namestocheck[1]):
+    #        score += 20.0
 
     return score+res 
 

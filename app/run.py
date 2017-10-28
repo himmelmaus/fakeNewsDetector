@@ -16,8 +16,7 @@ def real(url): #placeholder function before parsing url input
     try:
         n = fakenews.fakeNews(url)
     except:
-        print('a')
-        #raise
+        raise
         return {'status':"oops"}
     try:
         if n.lower() == "trump":
@@ -26,9 +25,9 @@ def real(url): #placeholder function before parsing url input
         pass
     try:
         if n > 50:
-            return {'status':"fake", 'value': int((n-50)*20)}
+            return {'status':"real", 'value': int((n-50)*10)}
         elif n < 50:
-            return {'status':"real", 'value':int((n)*10)}
+            return {'status':"fake", 'value':int((n)*10)}
     except:
         print ('b')
         #raise
