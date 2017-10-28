@@ -1,11 +1,12 @@
 from flask import Flask
 from flask import request
 from flask import render_template
-from time import sleep
 
 app = Flask(__name__)
 
 def real(n): #placeholder function before parsing url input
+    if n.lower() == "trump":
+        return "trump"
     try:
         n = int(n)
     except:

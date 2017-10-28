@@ -4,7 +4,7 @@ import comparison_topic
 from article_scraper import article_scrape
 import re
 
-url = "https://www.infowars.com/gorka-deep-state-withholding-of-jfk-files-stinks-to-high-heaven/"
+url = "http://www.bbc.co.uk/news/world-europe-41785292/"
 
 def main(url):
 
@@ -16,7 +16,6 @@ def main(url):
 
     # get the srs words
     titlekeywords = machine.FindTitle(url)
-    print("titlekeywords:")
     print(titlekeywords)
 
 
@@ -34,8 +33,6 @@ def main(url):
 
     # get article you are evaluating text
     mainArticleContent = article_scrape(url)
-    print ("main article:")
-    print (mainArticleContent)
 
     with open("testeroo.txt", 'w') as file:
         file.write(mainArticleContent)
@@ -47,9 +44,6 @@ def main(url):
     mainArticleTopics = topics.FindTopics(mainArticleContent)
     for elem in mainArticleTopics:
         elem = re.sub(r'\W+', '', elem)
-        
-    print ("main topics:")
-    print (mainArticleTopics)
 
     # gets a list of lists.
     # each list includes:
@@ -57,40 +51,22 @@ def main(url):
     # 1. the title/description
     # 2. article url
     # 3. topics
-    print ()
     articlecompare = machine.NewsCheck(titlekeywords)
     topicothers = []
     titles = [] 
-    for article in articlecompare:
-        articletxt = article_scrape(article[2])
+    articletxt = ""
+    for key in articlecompare:
+        articletxt = article_scrape(articlecompare[key])
+        with open("test2.txt", 'w') as file:
+            file.write(articletxt)
+        with open("test2.txt", 'r') as file:
+            articletxt = file.readlines()
         topicothers.append(topics.FindTopics(articletxt))
-        titles.append(article[1])
-
-    faketopic = ['spanish', 'catalan', 'independence', 'mr', 'it', 'say']
+        titles.append(articlecompare[key])
 
     scoring = comparison_topic.Comparison
-    print(titles)
+    #print(titles)
     scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles)
-
-
-    
-
-    
-    
- 
-
-
-    
-
-
-
-
-
-
-
-
-
-
 
 
 

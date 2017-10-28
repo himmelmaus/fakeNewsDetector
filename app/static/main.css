@@ -57,10 +57,9 @@ input {
     height:150px;
     text-align: center;
 }
-#realpercentage {
-    height: 150px;
-    background-color:#dff0db;
-    color:#99ff99;
+#percentage {
+    height: 100px;
+    font-size: 50px;
 }
 #positivity {
     height: 150px;

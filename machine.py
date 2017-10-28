@@ -3,6 +3,7 @@ import re
 import urllib
 import multiprocessing
 import json
+from lxml import html
 import requests
 from bs4 import BeautifulSoup
 from nltk.corpus import stopwords
@@ -26,7 +27,6 @@ def FindTitle(url):
     title_list = __title.split(" ")
 
     for element in title_list:
-        print (element)
         if element.lower() not in set(stopwords.words('english')):
             words_filtered.append(re.sub(r'\W+', '', element))
 
@@ -55,33 +55,35 @@ def NewsCheck(wordlist):
 
     #wordlist = ["Trump", "threatens", "Korea"]
 
-    searchurl = 'https://news.google.com/news/search/section/q/{}'.format('\%20'.join(wordlist))
+    searchurl = 'https://news.google.com/news/search/section/q/{}'.format('%20'.join(wordlist))
+    print(searchurl)
 
-    f = urllib.request.urlopen(searchurl).read()
+    #f = requests.get(searchurl).text
+    f = requests.get(searchurl).content
+    #print (f)
     soup = BeautifulSoup(f, 'html.parser')
-
+    soup.find_all(role="heading")
 
     for headinghtml in soup.find_all(role="heading"):
         headings.append(headinghtml.get_text())
-        print (headinghtml.get_text())
         articleurl.append(headinghtml.get('href'))
-        print (headinghtml.get('href'))
-
 
     for n in range (0, len(headings)):
         words = (len([w for w in wordstr if w in headings[n]]))
+        # words should be with split ?
         if words >= len(headings[n])/2:
             matches += words
         else:
             matches += words/2 
         
         if matches > 0:
-            temp = []
-            temp.append(matches)
-            temp.append(headings[n])
-            temp.append(articleurl[n])
-            packeddata.append(temp)
-
+            packeddata = {}
+            #temp.append(matches)
+            packeddata[headings[n]] = articleurl[n]
+            #temp.append(headings[n])
+            #temp.append(articleurl[n])
+            #packeddata.append(temp)
+    print(packeddata) # Tik vienas ------------------------------
     return packeddata
             
 
