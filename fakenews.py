@@ -2,6 +2,7 @@ import machine
 import article_topics
 import comparison_topic
 from article_scraper import article_scrape
+import re
 
 url = "https://www.infowars.com/gorka-deep-state-withholding-of-jfk-files-stinks-to-high-heaven/"
 
@@ -15,6 +16,8 @@ def main(url):
 
     # get the srs words
     titlekeywords = machine.FindTitle(url)
+    print("titlekeywords:")
+    print(titlekeywords)
 
 
     # TRUMP CHECK START
@@ -42,6 +45,9 @@ def main(url):
 
     # get topics of the main article you are evaluating
     mainArticleTopics = topics.FindTopics(mainArticleContent)
+    for elem in mainArticleTopics:
+        elem = re.sub(r'\W+', '', elem)
+        
     print ("main topics:")
     print (mainArticleTopics)
 
@@ -51,6 +57,7 @@ def main(url):
     # 1. the title/description
     # 2. article url
     # 3. topics
+    print ()
     articlecompare = machine.NewsCheck(titlekeywords)
     topicothers = []
     titles = [] 
