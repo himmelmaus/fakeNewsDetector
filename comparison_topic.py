@@ -32,7 +32,7 @@ class Comparison:
 
 		# Negativity score
 		negativity_rating = int(10 - (sentiment_analysis.Model.startModel(doc_complete)*10)) #sentiment_analysis gives back result from 0*10 to 1*10 from negative side, so 10 - result gives back normal score result
-		total_score = int(total_score + negativity_rating)
+		total_score = int(total_score + negativity_rating) / 10
 
 		print(total_score)
 		return total_score
