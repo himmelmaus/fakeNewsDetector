@@ -2,7 +2,7 @@ import sentiment_analysis
 
 class Comparison:
 	# topics_fake - result of the fake article topics, topics_others = other articles from the web for comparison
-	def compare(doc_complete, topics_fake, topics_others):
+	def compare(doc_complete, topics_fake, topics_others, headline_main, headlines_others):
 
 		# Points system. T - total score
 		# 0.25T - actual length of the articles found
@@ -29,10 +29,17 @@ class Comparison:
 					total_score = total_score + temp_score_unit
 
 		# Headlines score
+		onepts = 15/len(headlines_others)
+		for headline in headlines_others:
+			score_tmp = len([w for w in headline if w in headline_main])
+			if score_tmp >= len(headline)/2:
+				total_score += onepts 
+
+		#15 pts 
 
 		# Negativity score
 		negativity_rating = int(10 - (sentiment_analysis.Model.startModel(doc_complete)*10)) #sentiment_analysis gives back result from 0*10 to 1*10 from negative side, so 10 - result gives back normal score result
-		total_score = int(total_score + negativity_rating) / 10
+		total_score = int(total_score + negativity_rating) #/ 10
 
 		print(total_score)
 		return total_score

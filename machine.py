@@ -11,7 +11,7 @@ from nltk.corpus import stopwords
 import sys
 
 #local imports
-from article_scraper import article_scraper
+from article_scraper import article_scrape
 
 
 def FindTitle(url):
