@@ -24,7 +24,7 @@ def main(url):
     trump = machine.TrumpCheck(titlekeywords)
 
     if trump >= 2:
-        return "Trump" # if it's Trump, it's almost guaranteed fake news
+        return "trump" # if it's Trump, it's almost guaranteed fake news
     else:
         score += 50.0
     # TRUMP CHECK OVER
