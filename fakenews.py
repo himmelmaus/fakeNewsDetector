@@ -34,6 +34,12 @@ def main(url):
     print ("main article:")
     print (mainArticleContent)
 
+    with open("testeroo.txt", 'w') as file:
+        file.write(mainArticleContent)
+    
+    with open("testeroo.txt", 'r') as file:
+        mainArticleContent = file.readlines()
+
     # get topics of the main article you are evaluating
     mainArticleTopics = topics.FindTopics(mainArticleContent)
     print ("main topics:")
