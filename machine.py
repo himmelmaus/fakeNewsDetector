@@ -40,7 +40,8 @@ def NewsCheck(wordlist):
     # get a list of words, put it back into one big string. that's it. 
     # ' '.join(words_filtered)
     # headingstr = ' '.join(heading)
-
+    matches = 0
+    matchratio = 0.0
 
     wordlist = ' '.join(wordlist)
     headings = []
@@ -56,8 +57,20 @@ def NewsCheck(wordlist):
 
     for heading in headings:
         print (heading)
-    # compare to what percentage the keywords had in
-        print(len([w for w in wordlist if w in heading]))
+        words = (len([w for w in wordlist if w in heading]))
+        if words >= len(heading)/2:
+            matches += words
+        else:
+            matches += words/2 
+
+    matchratio = matches/len(headings)
+    return matches
+
+
+
+    
+
+    
 
 def SatireCheck(url):
     #instring:
