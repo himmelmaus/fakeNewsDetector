@@ -8,7 +8,6 @@ import re
 
 def fakeNews(url):
 
-
     score = 0
 
     if machine.SatireCheck(url):

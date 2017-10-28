@@ -10,12 +10,12 @@ class Model:
 		def format_sentence(sent):
 			return({word: True for word in nltk.word_tokenize(sent)})
 		pos = []
-		with open("./TrainingData/pos_tweets.txt") as f:
+		with open("/Users/findlaysmith/Desktop/AntiShitPostBot-5000/TrainingData/pos_tweets.txt") as f:
 			for i in f:
 				pos.append([format_sentence(i), 'pos'])
 		 
 		neg = []
-		with open("./TrainingData/neg_tweets.txt") as f:
+		with open("/Users/findlaysmith/Desktop/AntiShitPostBot-5000/TrainingData/neg_tweets.txt") as f:
 		    for i in f: 
 		        neg.append([format_sentence(i), 'neg'])
 		 
