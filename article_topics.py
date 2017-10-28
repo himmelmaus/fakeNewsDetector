@@ -1,5 +1,7 @@
 from nltk.corpus import stopwords # pip3 instlal nltk
 from nltk.stem.wordnet import WordNetLemmatizer
+import nltk
+from nltk.collocations import *
 import string
 import gensim # pip3 install Gensim
 from gensim import corpora
@@ -12,16 +14,28 @@ doc_complete = open("text.txt", "r").readlines()
 stop = set(stopwords.words('english'))
 exclude = set(string.punctuation)
 lemma = WordNetLemmatizer()
+unnecessary = []
+
+# Pos tag words and remove tags "IN", "MD", "CD"
+for i in range (0, len(doc_complete)):
+	doc_tokens = nltk.word_tokenize(doc_complete[i])
+	doc_pos_tags = nltk.pos_tag(doc_tokens)
+	for i in range (0, len(doc_pos_tags)):
+		if doc_pos_tags[i][1] in ["IN", "MD", "CD", "PDT", "PRP"]:
+			unnecessary.append(doc_pos_tags[i][0])
+		elif doc_pos_tags[i][1] == "NNP":
+			print(doc_pos_tags[i][0])
 
 # Cleans the composed string from stop words (stop_free), puncuation (punc_free) and l
 def clean(doc):
     stop_free = " ".join([i for i in doc.lower().split() if i not in stop])
-    punc_free = ''.join(ch for ch in stop_free if ch not in exclude)
+    unnecessary_free = " ".join([i for i in stop_free.lower().split() if i not in unnecessary])
+    punc_free = ''.join(ch for ch in unnecessary_free if ch not in exclude)
     normalized = " ".join(lemma.lemmatize(word) for word in punc_free.split())
     return normalized
 
 # Use clean function on doc_complete
-doc_clean = [clean(doc).split() for doc in doc_complete] 
+doc_clean = [clean(doc).split() for doc in doc_complete]
 
 # Matrix representation of a corpus using corpora
 dictionary = corpora.Dictionary(doc_clean)
