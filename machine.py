@@ -123,18 +123,18 @@ def main():
     else:
         print ("trump free")
 
-    if fakepoints > 90:
-        add = "Trump would build a WALL around this."
-    elif fakepoints > 80:
-        add = "It's fake."
-    elif fakepoints > 50:
-        add = "That's fishy."
-    elif fakepoints <= 50 and fakepoints > 45:
-        add = "It could go either way."
-    elif fakepoints < 45 and fakepoints > 30:
-        add = "It's more true than fake."
-    elif fakepoints < 30:
-        add = "It's LEGIT!"
+    #if fakepoints > 90:
+    #    add = "Trump would build a WALL around this."
+    #elif fakepoints > 80:
+    #    add = "It's fake."
+    #elif fakepoints > 50:
+    #    add = "That's fishy."
+    #elif fakepoints <= 50 and fakepoints > 45:
+    #    add = "It could go either way."
+    #elif fakepoints < 45 and fakepoints > 30:
+    #    add = "It's more true than fake."
+    #elif fakepoints < 30:
+    #    add = "It's LEGIT!"
     
 
     return "this site is {}%% FAKE NEWS. {}".format(fakepoints, add)
