@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 from flask import request
 from flask import render_template
-
+import nltk
 import sys, os.path
 fakenews_dir = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 + '/')
@@ -11,10 +11,13 @@ import fakenews
 app = Flask(__name__)
 
 def real(url): #placeholder function before parsing url input
+    if fakenews.blackList(url):
+        return {'status':'network'}
     try:
         n = fakenews.fakeNews(url)
     except:
         print('a')
+        #raise
         return {'status':"oops"}
     try:
         if n.lower() == "trump":
@@ -23,11 +26,12 @@ def real(url): #placeholder function before parsing url input
         pass
     try:
         if n > 50:
-            return {'status':"fake", 'value': int((n-50)*2)}
+            return {'status':"fake", 'value': int((n-50)*20)}
         elif n < 50:
-            return {'status':"real", 'value':int(n*2)}
+            return {'status':"real", 'value':int((n)*10)}
     except:
         print ('b')
+        #raise
         return {'status':"oops"}
 
 

@@ -5,10 +5,17 @@ import sentiment_analysis
 from article_scraper import article_scrape
 import re
 
-url = "http://www.bbc.co.uk/news/world-europe-41785292/"
+#testurl = "http://www.bbc.co.uk/news/world-europe-41785292/"
+
+def blackList(url):
+    socialNetworks = ["facebook.com", "twitter.com", "tumblr.com", "instagram.com", "pinterest.com", "4chan.org","reddit.com", "myspace.com","linkedin.com"]
+    for network in socialNetworks:
+        if network in url:
+            return True
+    return False
+
 
 def fakeNews(url):
-
 
     score = 0
 
@@ -67,7 +74,7 @@ def fakeNews(url):
 
     scoring = comparison_topic.Comparison
     #print(titles)
-    scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles)
+    return scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles)
 
 
 

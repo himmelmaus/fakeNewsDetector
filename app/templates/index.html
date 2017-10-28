@@ -18,7 +18,7 @@
         <body>
 {% endif %}
     <div class="container">
-            <div class="twelve columns">
+            <div id = "twelve" class="twelve columns">
               <div class="eight columns offset-by-two">
                   {% if result %}
                     <h2> Enter the next url to be tested!</h2><br>
@@ -30,14 +30,23 @@
                       <input type="submit" class = "button-primary">
                   </form>
                   {% if result %}
-                  {% if result.status == "real"%}
-                    <br><h2> This page is genuine news! </h2><br><br>
+                  {% if result.status == "network" %}
+                  <br><h2>Not a Valid Input</h2>
+                  <br><h4> The link provided links to a social media site and therefore is not a news article</h4>
+                  {% elif result.status == "real"%}
+                    <br><h2> The page is genuine news! </h2><br><br>
                     <div class = "three columns offset-by-two">
-                            <p class = "percentage" style="font-size:50px"> {{ result.value }} % </p>
+                            <p class = "percentage" style="font-size:40px"> {{ result.value }}% </p>
                         </div>
                     <div id = "realdescription" class = "five columns offset-by-one">
-                        description of what this means (how sure we are etc.)
-                    </div>
+                        {% if 10 > result.value %}
+                            <p> Though a prediction has been made we cannot be very confident in this evaluation due to the large margin of error in the software.</p>
+                        {% elif 40 > result.value %}
+                            <p> We can be reasonably confident in this prediction, as it is unlikely that a margin of error would be this high - except in edge circumstances.</p>
+                        {% else %}
+                            <p> We can be confident that this prediction is correct due to the high percentage chance</p>
+                        {% endif %}
+                        </div>
                     <br>
                     <br>
                 <div id = "positivity" class = "eight columns offset-by-two">
@@ -59,30 +68,22 @@
                         how positive or negative this is, or for shitposts, the key words that make us think it's a shitpost
                     </div>
                     {% elif result.status == "oops"%}
-        <body style = "background-color:#ffcccc;"></body>
+                    <body style = "background-color:#ffcccc;"></body>
                         <h4 style = "color:red;"> Sorry, {{ request.form['input'] }} wasn't a valid url</h4>
                     {% endif %}
                     {% else %}
-                    <h1> Fake news detector</h1>
-                    <h4> <a href = "https://en.wikipedia.org/wiki/Fake_news">From Wikipedia:</a></h4>
+                    <h4> <a href = "https://wikipedia.com">From Wikipedia:</a></h4>
                   <p>
                     <i>
                         Fake news is a type of yellow journalism or propaganda that consists of deliberate misinformation or hoaxes spread via traditional print and broadcast news media or online social media. Fake news is written and published with the intent to mislead in order to damage an agency, entity, or person, and/or gain financially or politically, often with sensationalist, exaggerated, or patently false headlines that grab attention. Intentionally misleading and deceptive fake news is different from obvious satire or parody which is intended to humor rather than mislead its audience. Fake news often employs eye-catching headlines or entirely fabricated news stories to increase readership, online sharing and Internet click revenue. In the latter case, it is similar to sensational online "clickbait" headlines and relies on advertising revenue generated from this activity, regardless of the veracity of the published stories. Fake news also undermines serious media coverage and makes it more difficult for journalists to cover significant news stories.
                     </i> 
                     {% endif %}
                     <br><br><br><br><br><br><br><br>
-                    If you would like to stay informed on fake news in the real world, we recommend you check out the following:
-                  </p>
-                  <a href="https://twitter.com/realDonaldTrump?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @realDonaldTrump</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                   
                   <br>
                   <br>
                   <br>
                   <br>
                   <br>
-                  <footer id = "footer" style = "font-size:10px">
-                        This website was developed by <a href = "https://github.com/findoslice"> Findlay Smith</a>, the backend algorithms were developed by <a href = "https://github.com/roxerg">Rokas Gudavicius</a>, <a href = "https://github.com/karolishp">Karolis Spukas</a>, and <a href="https://github.com/jafbuya"> Ross Boyd</a>. The website relies on the open source CSS boilerplate <a href = "http://getskeleton.com"> skeleton.css</a>. We, the developers, would like to give thanks to big daddy Donald Trump for inspiring our crusade for the truth.
-                  </footer>
                 </div>
             </div>
         </div>
