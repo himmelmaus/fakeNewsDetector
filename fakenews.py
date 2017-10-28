@@ -32,7 +32,7 @@ def fakeNews(url):
 
     if trump >= 2:
         return "Trump" # if it's Trump, it's almost guaranteed fake news
-    else:
+    elif trump == 1:
         score += 50.0
     # TRUMP CHECK OVER
 
