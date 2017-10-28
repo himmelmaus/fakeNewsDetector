@@ -3,13 +3,23 @@ body{
     color: #7575a3;
     background-color:#f0f0f8;
 }
+a{
+    text-decoration: none;
+    color: #fff; 
+}
+a:hover{
+    color:#000;
+}
 
-/*input {
-    position: absolute;
-    width: 30%;
-    margin-right: 25%;
-    margin-length: 25%;
-}*/
+.twitter-timeline{
+    height: 300px;
+    margin-top: -20px;
+}
+
+.footer{
+    width: 200%;
+    font-size: 8px;
+}
 input {
     color: #7575a3;
     position: static;
