@@ -68,9 +68,9 @@ def main(url):
 
     faketopic = ['spanish', 'catalan', 'independence', 'mr', 'it', 'say']
 
-    scoring = comparison_topic.Comparison()
+    scoring = comparison_topic.Comparison
     print(titles)
-    scoring.compare(mainArticleContent, faketopic, topicothers, titles)
+    scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles)
 
 
     

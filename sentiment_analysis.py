@@ -25,10 +25,12 @@ class Model:
 
 		# Actual classifier
 		classifier = NaiveBayesClassifier.train(training)
-
+		doc_complete_temp = []
+		for line in doc_complete:
+			doc_complete_temp = line
 		#Calculating average of sentiments of the sentences
 		avg = 0
-		length = len(doc_complete)
+		length = len(doc_complete_temp)
 		for items in doc_complete:
 			avg = avg + float(classifier.prob_classify(format_sentence(items)).prob('neg'))
 		avg = avg / length
