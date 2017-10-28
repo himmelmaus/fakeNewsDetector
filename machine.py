@@ -68,7 +68,7 @@ def NewsCheck(wordlist):
         print (headinghtml.get('href'))
 
 
-    for n in len(headings):
+    for n in range (0, len(headings)):
         words = (len([w for w in wordstr if w in headings[n]]))
         if words >= len(headings[n])/2:
             matches += words
