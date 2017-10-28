@@ -74,7 +74,9 @@ def fakeNews(url):
 
     scoring = comparison_topic.Comparison
     #print(titles)
-    return scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles)
+    negativity = sentiment_analysis.Model
+    return scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles), negativity.startModel(mainArticleContent)
+
 
 
 
