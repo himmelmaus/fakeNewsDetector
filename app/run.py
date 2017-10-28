@@ -5,10 +5,17 @@ from time import sleep
 
 app = Flask(__name__)
 
+def real(n):
+    if int(n) > 5:
+        return "fake"
+    else:
+        return "real"
+
 @app.route('/', methods=['GET','POST'])
 def print_form():
     if request.method == 'POST':
-        return render_template('index.html', result=request.form['input'])
+        result = request.form['input']                                                                                                                         
+        return render_template('index.html', result=real(result))
     if request.method == 'GET':
         return render_template('index.html')
 
