@@ -23,8 +23,8 @@ for i in range (0, len(doc_complete)):
 	for i in range (0, len(doc_pos_tags)):
 		if doc_pos_tags[i][1] in ["IN", "MD", "CD", "PDT", "PRP"]:
 			unnecessary.append(doc_pos_tags[i][0])
-		elif doc_pos_tags[i][1] == "NNP":
-			print(doc_pos_tags[i][0])
+		#elif doc_pos_tags[i][1] == "NNP":
+			#print(doc_pos_tags[i][0])
 
 # Cleans the composed string from stop words (stop_free), puncuation (punc_free) and l
 def clean(doc):
@@ -61,4 +61,8 @@ for i in range(0, len(pairs)):
 
 # Decending
 most_popular_topics = sorted(pairs_dictionary, key=pairs_dictionary.get, reverse=True)
-print(most_popular_topics)
+
+print (most_popular_topics)
+for elem in most_popular_topics:
+	print (elem)
+
