@@ -57,40 +57,26 @@ def main(url):
     # 1. the title/description
     # 2. article url
     # 3. topics
-    print ()
+    print (titlekeywords)
     articlecompare = machine.NewsCheck(titlekeywords)
+    print (articlecompare)
     topicothers = []
     titles = [] 
-    for article in articlecompare:
-        articletxt = article_scrape(article[2])
+    for key in articlecompare:
+        print ("LOOP")
+        articletxt = article_scrape(articlecompare[key])
         topicothers.append(topics.FindTopics(articletxt))
-        titles.append(article[1])
+        print (topicothers)
+        titles.append(articlecompare[1])
+        print (key)
+    
+    print ("this happens after loop")
 
     faketopic = ['spanish', 'catalan', 'independence', 'mr', 'it', 'say']
 
     scoring = comparison_topic.Comparison
-    print(titles)
+    #print(titles)
     scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles)
-
-
-    
-
-    
-    
- 
-
-
-    
-
-
-
-
-
-
-
-
-
-
 
 
 

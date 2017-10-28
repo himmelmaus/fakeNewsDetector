@@ -3,6 +3,7 @@ import re
 import urllib
 import multiprocessing
 import json
+from lxml import html
 import requests
 from bs4 import BeautifulSoup
 from nltk.corpus import stopwords
@@ -57,11 +58,16 @@ def NewsCheck(wordlist):
 
     searchurl = 'https://news.google.com/news/search/section/q/{}'.format('\%20'.join(wordlist))
 
-    f = urllib.request.urlopen(searchurl).read()
+    #f = requests.get(searchurl).text
+    f = requests.get(searchurl).content
+    #print (f)
     soup = BeautifulSoup(f, 'html.parser')
-
+    print (soup.find_all(role="heading"))
+    
+    print ("if you can see this its pretty good")
 
     for headinghtml in soup.find_all(role="heading"):
+        print ("if you can't see this we are fucked")
         headings.append(headinghtml.get_text())
         print (headinghtml.get_text())
         articleurl.append(headinghtml.get('href'))
@@ -76,11 +82,12 @@ def NewsCheck(wordlist):
             matches += words/2 
         
         if matches > 0:
-            temp = []
-            temp.append(matches)
-            temp.append(headings[n])
-            temp.append(articleurl[n])
-            packeddata.append(temp)
+            packeddata = {}
+            #temp.append(matches)
+            packeddata[headings[n]] = articleurl[n]
+            #temp.append(headings[n])
+            #temp.append(articleurl[n])
+            #packeddata.append(temp)
 
     return packeddata
             
