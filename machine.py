@@ -68,7 +68,15 @@ def NewsCheck(wordlist):
         headings.append(headinghtml.get_text())
         articleurl.append(headinghtml.get('href'))
 
+
+    packeddata = {}
+
     for n in range (0, len(headings)):
+        if (n > 5): 
+            continue 
+        print (n)
+        print(headings[n])
+        print(wordstr)
         words = (len([w for w in wordstr if w in headings[n]]))
         # words should be with split ?
         if words >= len(headings[n])/2:
@@ -77,7 +85,7 @@ def NewsCheck(wordlist):
             matches += words/2 
         
         if matches > 0:
-            packeddata = {}
+            
             #temp.append(matches)
             packeddata[headings[n]] = articleurl[n]
             #temp.append(headings[n])
