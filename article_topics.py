@@ -67,6 +67,7 @@ class OnStart:
 
 		# Decending sorting order
 		most_popular_topics = sorted(pairs_dictionary, key=pairs_dictionary.get, reverse=True)
+		print(most_popular_topics)
 		return most_popular_topics
 
 	# Used to find names and any other "PERSON" tags in the text
@@ -87,4 +88,4 @@ class OnStart:
 		return names
 
 if __name__ == "__main__":
-	OnStart()
+	OnStart.FindTopics()
