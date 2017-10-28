@@ -4,9 +4,9 @@ import comparison_topic
 from article_scraper import article_scrape
 import re
 
-#url = "http://www.bbc.co.uk/news/world-europe-41785292/"
+url = "http://www.bbc.co.uk/news/world-europe-41785292/"
 
-def fakeNews(url):
+def main(url):
 
     score = 0
 
@@ -65,11 +65,11 @@ def fakeNews(url):
 
     scoring = comparison_topic.Comparison
     #print(titles)
-    scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles)
+    return scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles)
 
 
 
 
 
-#if __name__ == "__main__":
-#    main(url)
+if __name__ == "__main__":
+    main(url)
