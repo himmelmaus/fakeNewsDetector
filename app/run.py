@@ -11,6 +11,7 @@ def my_form():
 @app.route('/', methods=['POST'])
 def print_form():
     if request.method == 'POST':
+        print (request.form(['input']))
         return render_template('index.html', result=request.form['input'])
     if request.method == 'GET':
         return render_template('index.html')
