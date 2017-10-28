@@ -42,8 +42,8 @@ def fakeNews(url):
     namestocheck = article_topics.OnStart.FindNames()
 
     PersonBlacklist = [("Alex", "Jones"), ("Tom", "Cruise"), ("Adolf", "Hitler"), ("Findlay", "Smith")]
-    for name in namestocheck:
-        if name in PersonBlacklist:
+    for person in PersonBlacklist:
+        if (person[0] == namestocheck[0]) and (person[1] == namestocheck[1]):
             score += 20.0
 
     # get article you are evaluating text
