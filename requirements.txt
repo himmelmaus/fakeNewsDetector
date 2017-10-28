@@ -1,0 +1,5 @@
+flask == 9.0.1
+nltk == 3.2.5
+Gensim == 3.0.1
+numpy == 1.13.1
+scipy == 1.0.0
