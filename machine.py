@@ -102,7 +102,7 @@ def TrumpCheck(words_filtered):
     
 
 def main():
-    fakepoints = 0
+    fakepoints = 0.0
 
     url = sys.argv[1]
 
@@ -111,6 +111,8 @@ def main():
         return "satire"
 
     words_filtered = FindTitle(url)
+
+    fakepoints += NewsCheck(words_filtered)/100
 
     # checks if related to Trump
     trump = TrumpCheck(words_filtered)
