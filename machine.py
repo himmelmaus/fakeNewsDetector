@@ -7,6 +7,10 @@ import requests
 from bs4 import BeautifulSoup
 from nltk.corpus import stopwords
 
+# temp
+import sys
+
+
 def FindTitle(url):
 	##
     title_list, words_filtered = [],[]
@@ -31,21 +35,16 @@ def FindTitle(url):
 	#print(FindTitle(inputvar))
 # satire or parody check
 
-
-
-
-
-
-
-
-def NewsCheck(url):
+def NewsCheck(wordlist):
 
     # get a list of words, put it back into one big string. that's it. 
     # ' '.join(words_filtered)
     # headingstr = ' '.join(heading)
 
+
+    wordlist = ' '.join(wordlist)
     headings = []
-    wordlist = ["Trump", "threatens", "Korea"]
+    #wordlist = ["Trump", "threatens", "Korea"]
 
     searchurl = 'https://news.google.com/news/search/section/q/{}'.format('\%20'.join(wordlist))
 
@@ -67,18 +66,73 @@ def SatireCheck(url):
 
     if any(x in url for x in satiresites):
         print ("it's satire you silly sausage")
+        return True
+    else:
+        return False
 
 def TrumpCheck(words_filtered):
 
-    trumpfactor = len([w for w in ['Donald', 'Trump'] if w in words_filtered])
+    wordtemp = []
+    for word in words_filtered:
+        wordtemp.append(word.lower())
 
-    if trumpfactor == 2:
-        return "TRUMPED"
-    elif trumpfactor == 1:
-        return "could be trumped"
-    elif trumpfactor == 0:
-        return "Trump-free"
+    words_filtered = wordtemp
+
+    trumpfactor = len([w for w in ['donald', 'trump'] if w in words_filtered]) 
+
+    if set(['make', 'america', 'great', 'again']).issubset(set(words_filtered)) or ('maga' in words_filtered):
+        trumpfactor += 2
+
+    return trumpfactor 
+
+# TODO: ARTICLE CHECK 
     
+
+def main():
+    fakepoints = 0
+
+    url = sys.argv[1]
+
+    # checks if satire
+    if SatireCheck(url):
+        return "satire"
+
+    words_filtered = FindTitle(url)
+
+    # checks if related to Trump
+    trump = TrumpCheck(words_filtered)
+    if trump >= 2:
+        return "trumped"
+    elif trump == 1:
+        fakepoints += 30
+    else:
+        print ("trump free")
+
+    if fakepoints > 90:
+        add = "Trump would build a WALL around this."
+    elif fakepoints > 80:
+        add = "It's fake."
+    elif fakepoints > 50:
+        add = "That's fishy."
+    elif fakepoints <= 50 and fakepoints > 45:
+        add = "It could go either way."
+    elif fakepoints < 45 and fakepoints > 30:
+        add = "It's more true than fake."
+    elif fakepoints < 30:
+        add = "It's LEGIT!"
+    
+
+    return "this site is {}%% FAKE NEWS. {}".format(fakepoints, add)
+
+
+if __name__ == "__main__":
+    print main() 
+    
+
+
+    
+    
+        
 
 
 
