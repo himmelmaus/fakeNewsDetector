@@ -21,6 +21,10 @@ input {
 .button{
     width:30%;
     margin-left:40%;
+    text-align: center;
+}
+.button:hover{
+    background-color: #FFF;
 }
 .six.columns{
     height: 300px;
