@@ -13,6 +13,7 @@ body{
 input {
     color: #7575a3;
     position: static;
+    text-align: center;
 }
 .text{
     width: 200px;
