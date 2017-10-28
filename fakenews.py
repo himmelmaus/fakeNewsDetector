@@ -2,6 +2,7 @@ import machine
 import article_topics
 import comparison_topic
 from article_scraper import article_scrape
+import re
 
 url = "https://www.infowars.com/gorka-deep-state-withholding-of-jfk-files-stinks-to-high-heaven/"
 
@@ -15,13 +16,15 @@ def main(url):
 
     # get the srs words
     titlekeywords = machine.FindTitle(url)
+    print("titlekeywords:")
+    print(titlekeywords)
 
 
     # TRUMP CHECK START
     trump = machine.TrumpCheck(titlekeywords)
 
     if trump >= 2:
-        return 99.0 # if it's Trump, it's almost guaranteed fake news
+        return "Trump" # if it's Trump, it's almost guaranteed fake news
     else:
         score += 50.0
     # TRUMP CHECK OVER
@@ -42,6 +45,9 @@ def main(url):
 
     # get topics of the main article you are evaluating
     mainArticleTopics = topics.FindTopics(mainArticleContent)
+    for elem in mainArticleTopics:
+        elem = re.sub(r'\W+', '', elem)
+        
     print ("main topics:")
     print (mainArticleTopics)
 
@@ -51,38 +57,26 @@ def main(url):
     # 1. the title/description
     # 2. article url
     # 3. topics
+    print (titlekeywords)
     articlecompare = machine.NewsCheck(titlekeywords)
+    print (articlecompare)
     topicothers = []
     titles = [] 
-    for article in articlecompare:
-        articletxt = article_scrape(article[2])
+    for key in articlecompare:
+        print ("LOOP")
+        articletxt = article_scrape(articlecompare[key])
         topicothers.append(topics.FindTopics(articletxt))
-        titles.append(article[1])
+        print (topicothers)
+        titles.append(articlecompare[1])
+        print (key)
+    
+    print ("this happens after loop")
 
     faketopic = ['spanish', 'catalan', 'independence', 'mr', 'it', 'say']
 
-    scoring = comparison_topic.Comparison()
-    scoring.compare(mainArticleContent, faketopic, topicothers, titles)
-
-
-    
-
-    
-    
- 
-
-
-    
-
-
-
-
-
-
-
-
-
-
+    scoring = comparison_topic.Comparison
+    #print(titles)
+    scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles)
 
 
 
