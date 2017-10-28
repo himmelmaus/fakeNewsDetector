@@ -1,6 +1,7 @@
 import machine
 import article_topics
 import comparison_topic
+import sentiment_analysis
 from article_scraper import article_scrape
 import re
 
