@@ -6,10 +6,17 @@ from time import sleep
 app = Flask(__name__)
 
 def real(n):
-    if int(n) > 5:
-        return "fake"
+    try:
+        n = int(n)
+    except:
+        return "oops"
+    if n:
+        if int(n) > 5:
+            return "fake"
+        else:
+            return "real"
     else:
-        return "real"
+        pass
 
 @app.route('/', methods=['GET','POST'])
 def print_form():

@@ -16,9 +16,11 @@ a:hover{
     margin-top: -20px;
 }
 
-.footer{
+footer{
     width: 200%;
     font-size: 8px;
+    position: absolute;
+    margin-bottom: 5px;
 }
 input {
     color: #7575a3;
