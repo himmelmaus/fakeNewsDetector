@@ -20,7 +20,7 @@ def fakeNews(url):
     score = 0
 
     if machine.SatireCheck(url):
-        return 100 # If satire, it's fake news
+        return 100.5 # If satire, it's fake news
 
     # get the srs words
     titlekeywords = machine.FindTitle(url)

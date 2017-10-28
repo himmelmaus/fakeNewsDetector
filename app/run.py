@@ -25,9 +25,9 @@ def real(url): #placeholder function before parsing url input
         pass
     try:
         if n > 50:
-            return {'status':"real", 'value': int((n-50)*10)}
+            return {'status':"fake", 'value': int((n-50)*2)}
         elif n < 50:
-            return {'status':"fake", 'value':int((n)*10)}
+            return {'status':"real", 'value':int((50-n)*2)}
     except:
         print ('b')
         #raise
