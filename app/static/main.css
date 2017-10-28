@@ -1,0 +1,85 @@
+body{
+    font-family: sans-serif;
+    color: #7575a3;
+    background-color:#f0f0f8;
+}
+
+/*input {
+    position: absolute;
+    width: 30%;
+    margin-right: 25%;
+    margin-length: 25%;
+}*/
+input {
+    color: #7575a3;
+    position: static;
+    text-align: center;
+}
+.text{
+    width: 200px;
+    margin-left: 25%;
+}
+.button{
+    width:30%;
+    margin-left:40%;
+    text-align: center;
+}
+.button:hover{
+    background-color: #FFF;
+}
+.six.columns{
+    height: 300px;
+    border-style: solid;
+    border-width: 12px;
+    border-radius: 12%;
+    text-align: center;
+}
+.container {
+    /*background-color: #000;*/
+}
+.eight.columns{
+    margin-top:5%;
+    color: #7575a3;
+    text-align:center;
+}
+#as {
+    border-color:#00F200;
+    background-color: rgba(129,231,129, 0.25);
+}
+#tavo {
+    font-family: sans-serif;
+    color:#107A10;
+    position: static;
+    padding: 8px;
+}
+#irgi{
+    border-color: #A20000;
+    background-color: rgba(255,143,143, 0.25)
+}
+#mama {
+    font-family: sans-serif;
+    color:#A20000;
+    position: static;
+    padding: 8px;
+}
+.container {
+    height:100%;
+}
+.twelve.columns{
+    height:100%;
+}
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+ }
