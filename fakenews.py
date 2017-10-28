@@ -70,7 +70,7 @@ def main(url):
 
     scoring = comparison_topic.Comparison
     print(titles)
-    scoring.compare(faketopic, topicothers, titlekeywords, titles)
+    scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles)
 
 
     
