@@ -88,7 +88,8 @@ def fakeNews(url):
     #for person in PersonBlacklist:
     #    if (person[0] == namestocheck[0]) and (person[1] == namestocheck[1]):
     #        score += 20.0
-
+    print(score)
+    print (score+res)
     return score+res 
 
 def whySoNegative():
