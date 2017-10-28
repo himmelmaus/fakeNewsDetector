@@ -4,15 +4,16 @@ from flask import render_template
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods = ['GET','POST'])
 def my_form():
     return render_template("index.html")
 
 @app.route('/', methods=['POST'])
-def my_form_post():
-    text = request.form['text']
-    processed_text = text.upper()
-    return processed_text
+def print_form():
+    if request.method == 'POST':
+        return render_template('index.html', result=request.form['input'])
+    if request.method == 'GET':
+        return render_template('index.html')
 
 if __name__ == '__main__':
     app.run()
