@@ -28,7 +28,7 @@ def FindTitle(url):
     for element in title_list:
         print (element)
         if element.lower() not in set(stopwords.words('english')):
-            words_filtered.append(element)
+            words_filtered.append(re.sub(r'\W+', '', element))
 
     return words_filtered
 
