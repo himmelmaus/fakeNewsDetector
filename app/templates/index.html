@@ -18,7 +18,7 @@
         <body>
 {% endif %}
     <div class="container">
-            <div class="twelve columns">
+            <div id = "twelve" class="twelve columns">
               <div class="eight columns offset-by-two">
                   {% if result %}
                     <h2> Enter the next url to be tested!</h2><br>
@@ -36,11 +36,17 @@
                   {% elif result.status == "real"%}
                     <br><h2> The page is genuine news! </h2><br><br>
                     <div class = "three columns offset-by-two">
-                            <p class = "percentage" style="font-size:50px"> {{ result.value }} % </p>
+                            <p class = "percentage" style="font-size:40px"> {{ result.value }}% </p>
                         </div>
                     <div id = "realdescription" class = "five columns offset-by-one">
-                        description of what this means (how sure we are etc.)
-                    </div>
+                        {% if 10 > result.value %}
+                            <p> Though a prediction has been made we cannot be very confident in this evaluation due to the large margin of error in the software.</p>
+                        {% elif 40 > result.value %}
+                            <p> We can be reasonably confident in this prediction, as it is unlikely that a margin of error would be this high - except in edge circumstances.</p>
+                        {% else %}
+                            <p> We can be confident that this prediction is correct due to the high percentage chance</p>
+                        {% endif %}
+                        </div>
                     <br>
                     <br>
                 <div id = "positivity" class = "eight columns offset-by-two">
@@ -66,7 +72,6 @@
                         <h4 style = "color:red;"> Sorry, {{ request.form['input'] }} wasn't a valid url</h4>
                     {% endif %}
                     {% else %}
-                    <h1> Fake news detector</h1>
                     <h4> <a href = "https://wikipedia.com">From Wikipedia:</a></h4>
                   <p>
                     <i>
@@ -79,9 +84,6 @@
                   <br>
                   <br>
                   <br>
-                  <footer id = "footer" style = "font-size:10px">
-                        This website was developed by Findlay Smith, the backend algorithms were developed by Rokas Gudavicius, Karolis Spukas, and Ross Boyd. The website relies on the open source CSS boilerplate skeleton.css We, the developers, would like to give thanks to big daddy Donald Trump for inspiring our crusade for the truth.
-                  </footer>
                 </div>
             </div>
         </div>
