@@ -83,9 +83,17 @@ def fakeNews(url):
     #print(titles)
     negativity = sentiment_analysis.Model
 
-    return score+scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles), negativity.startModel(mainArticleContent)
+    return score+scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles), 
+
+def whySoNegative():
+
+    with open("testeroo.txt", 'r') as file:
+        mainArticleContent = file.readlines()
+
+    negativity = sentiment_analysis.Model
 
 
+    return negativity.startModel(mainArticleContent)
 
 
 
