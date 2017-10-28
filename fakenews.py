@@ -24,7 +24,7 @@ def main(url):
     trump = machine.TrumpCheck(titlekeywords)
 
     if trump >= 2:
-        return 99.0 # if it's Trump, it's almost guaranteed fake news
+        return "Trump" # if it's Trump, it's almost guaranteed fake news
     else:
         score += 50.0
     # TRUMP CHECK OVER
@@ -69,6 +69,7 @@ def main(url):
     faketopic = ['spanish', 'catalan', 'independence', 'mr', 'it', 'say']
 
     scoring = comparison_topic.Comparison()
+    print(titles)
     scoring.compare(mainArticleContent, faketopic, topicothers, titles)
 
 
