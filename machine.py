@@ -67,8 +67,10 @@ def NewsCheck(wordlist):
     for headinghtml in soup.find_all(role="heading"):
         headings.append(headinghtml.get_text())
         articleurl.append(headinghtml.get('href'))
+    
+    packeddata = {}
 
-    for n in range (0, len(headings)):
+    for n in range (0, 5):
         words = (len([w for w in wordstr if w in headings[n]]))
         # words should be with split ?
         if words >= len(headings[n])/2:
@@ -77,7 +79,6 @@ def NewsCheck(wordlist):
             matches += words/2 
         
         if matches > 0:
-            packeddata = {}
             #temp.append(matches)
             packeddata[headings[n]] = articleurl[n]
             #temp.append(headings[n])

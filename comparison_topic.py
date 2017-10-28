@@ -17,18 +17,19 @@ class Comparison:
 		# 1. Actual length of articles
 		topics_fake_length = len(topics_fake)
 		topics_others_length = len(topics_others)
-		length_score = topics_others_length * 5 # 0 < topics_others_length < 5, 0 < total_score < 25
+		length_score = topics_others_length * 5 # 0 < topics_others_length < 5, 0 < total_score < 25 ???
 		total_score = total_score + length_score
 
 		print("Score 1 " + str(total_score))
 
-		temp_score_unit = 50 / topics_fake_length
+		temp_score_unit = 50 / (topics_fake_length * topics_others_length)
 
 		#Relevance according to the topics
 		for item in topics_others:
 			for i in range(0, topics_fake_length):
 				if topics_fake[i] in item:
 					total_score = total_score + temp_score_unit
+					#print(str(total_score) + " = " + topics_fake[i] + ", " + str(item[item.index(topics_fake[i])]))
 
 		print("Score 2 " + str(total_score))
 
