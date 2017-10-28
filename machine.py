@@ -10,6 +10,9 @@ from nltk.corpus import stopwords
 # temp
 import sys
 
+#local imports
+from article_scraper import article_scraper
+
 
 def FindTitle(url):
 	##
@@ -43,8 +46,13 @@ def NewsCheck(wordlist):
     matches = 0
     matchratio = 0.0
 
-    wordlist = ' '.join(wordlist)
+    wordstr = ' '.join(wordlist)
     headings = []
+    articleurl = []
+
+    #similarity points, desc, url
+    packeddata = []
+
     #wordlist = ["Trump", "threatens", "Korea"]
 
     searchurl = 'https://news.google.com/news/search/section/q/{}'.format('\%20'.join(wordlist))
@@ -52,20 +60,33 @@ def NewsCheck(wordlist):
     f = urllib.request.urlopen(searchurl).read()
     soup = BeautifulSoup(f, 'html.parser')
 
+
     for headinghtml in soup.find_all(role="heading"):
         headings.append(headinghtml.get_text())
+        print (headinghtml.get_text())
+        articleurl.append(headinghtml.get('href'))
+        print (headinghtml.get('href'))
 
-    for heading in headings:
-        print (heading)
-        words = (len([w for w in wordlist if w in heading]))
-        if words >= len(heading)/2:
+
+    for n in len(headings):
+        words = (len([w for w in wordstr if w in headings[n]]))
+        if words >= len(headings[n])/2:
             matches += words
         else:
             matches += words/2 
+        
+        if matches > 0:
+            temp = []
+            temp.append(matches)
+            temp.append(headings[n])
+            temp.append(articleurl[n])
+            packeddata.append(temp)
 
-    matchratio = matches/len(headings)
-    return matches
+    return packeddata
+            
 
+
+    #matchratio = matches/len(headings)
 
 
     
@@ -141,7 +162,7 @@ def main():
 
 
 if __name__ == "__main__":
-    print main() 
+    print (main()) 
     
 
 
