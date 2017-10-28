@@ -4,7 +4,7 @@ import comparison_topic
 from article_scraper import article_scrape
 import re
 
-#url = "http://www.bbc.co.uk/news/world-europe-41785292/"
+url = "http://www.bbc.co.uk/news/world-europe-41785292/"
 
 def fakeNews(url):
 
