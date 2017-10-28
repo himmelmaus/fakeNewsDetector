@@ -67,6 +67,8 @@ def NewsCheck(wordlist):
     for headinghtml in soup.find_all(role="heading"):
         headings.append(headinghtml.get_text())
         articleurl.append(headinghtml.get('href'))
+    
+    packeddata = {}
 
 
     packeddata = {}
