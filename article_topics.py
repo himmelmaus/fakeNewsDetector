@@ -88,4 +88,4 @@ class OnStart:
 		return names
 
 if __name__ == "__main__":
-	OnStart.FindTopics()
+	print (OnStart.FindNames())

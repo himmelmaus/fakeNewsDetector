@@ -22,24 +22,25 @@ class Comparison:
 
 		print("Score 1 " + str(total_score))
 
-		temp_score_unit = 50 / (topics_fake_length * topics_others_length + 1)
+		if ((topics_fake_length * topics_others_length) != 0):
+			temp_score_unit = 50 / (topics_fake_length * topics_others_length)
 
-		#Relevance according to the topics
-		for item in topics_others:
-			for i in range(0, topics_fake_length):
-				if topics_fake[i] in item:
-					total_score = total_score + temp_score_unit
+			#Relevance according to the topics
+			for item in topics_others:
+				for i in range(0, topics_fake_length):
+					if topics_fake[i] in item:
+						total_score = total_score + temp_score_unit
 					#print(str(total_score) + " = " + topics_fake[i] + ", " + str(item[item.index(topics_fake[i])]))
 
-		print("Score 2 " + str(total_score))
+			print("Score 2 " + str(total_score))
 
-		# Headlines score
-		if len(headlines_others) != 0:
-			onepts = 15/len(headlines_others)
-			for headline in headlines_others:
-				score_tmp = len([w for w in headline if w in headline_main])
-				if score_tmp >= len(headline)/2:
-					total_score += onepts 
+			# Headlines score
+			if len(headlines_others) != 0:
+				onepts = 15/len(headlines_others)
+				for headline in headlines_others:
+					score_tmp = len([w for w in headline.split(' ') if w in headline_main.split(' ')])
+					if score_tmp >= len(headline)/2:
+						total_score += onepts 
 
 		print("Score 3 " + str(total_score))
 
