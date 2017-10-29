@@ -14,6 +14,15 @@ def blackList(url):
             return True
     return False
 
+def invalid(url):
+    if url.startswith("https://"):
+        return False
+    elif url.startswith("http://"):
+        return False
+    else:
+        return True
+
+
 
 def fakeNews(url):
 
@@ -44,7 +53,10 @@ def fakeNews(url):
     
 
     # get article you are evaluating text
-    mainArticleContent = article_scrape(url)
+    try:
+        mainArticleContent = article_scrape(url)
+    except:
+        return "oops"
 
     with open("testeroo.txt", 'w') as file:
         file.write(mainArticleContent)
@@ -68,7 +80,10 @@ def fakeNews(url):
     titles = [] 
     articletxt = ""
     for key in articlecompare:
-        articletxt = article_scrape(articlecompare[key])
+        try:
+            articletxt = article_scrape(articlecompare[key])
+        except:
+            return "oops"
         with open("test2.txt", 'w') as file:
             file.write(articletxt)
         with open("test2.txt", 'r') as file:
