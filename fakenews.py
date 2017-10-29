@@ -38,7 +38,7 @@ def fakeNews(url):
     score = 0
 
     if machine.SatireCheck(url):
-        return 100.5 # If satire, it's fake news
+        return -0.05 # If satire, it's fake news
 
     # get the srs words
     titlekeywords = machine.FindTitle(url)
@@ -50,8 +50,8 @@ def fakeNews(url):
 
     if trump >= 2:
         return "Trump" # if it's Trump, it's almost guaranteed fake news
-    elif trump == 1:
-        score += 50.0
+    else:
+        pass
     # TRUMP CHECK OVER
 
     # initiate the class

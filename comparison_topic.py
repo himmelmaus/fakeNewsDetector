@@ -38,7 +38,7 @@ class Comparison:
 			if len(headlines_others) != 0:
 				onepts = 15/len(headlines_others)
 				for headline in headlines_others:
-					score_tmp = len([w for w in headline.split(' ') if w in headline_main.split(' ')])
+					score_tmp = len([w for w in headline.split(' ') if w in headline_main])
 					if score_tmp >= len(headline)/2:
 						total_score += onepts 
 
