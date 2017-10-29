@@ -61,7 +61,8 @@
                     
                 {% elif result.status == "oops"%}
                     <body style = "background-color:#ffcccc;"></body>
-                        <h4 style = "color:red;"> Sorry, {{ request.form['input'] }} wasn't a valid url</h4>
+                        <h4 style = "color:red;"> Sorry, <a href = {{ request.form['input'] }} > that page</a> wasn't a valid news url. </h4>
+                        <p style = "font-size:20px;color:red;">Please remember to include the prefix <i>http://</i> or <i>https://</i> where appropriate.</i></p>
                     {% endif %}
                     {% else %}
                     <h4> <a href = "https://wikipedia.com/wiki/Fake_news">From Wikipedia</a></h4>
