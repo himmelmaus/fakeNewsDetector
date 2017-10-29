@@ -1,6 +1,14 @@
 import nltk
 from nltk.classify import NaiveBayesClassifier
 from nltk.classify.util import accuracy
+import sys, os
+
+pos_tweets = (os.path.abspath('..'
++ '/TrainingData' + '/pos_tweets.txt'))
+neg_tweets = (os.path.abspath('..'
++ '/TrainingData' + '/neg_tweets.txt'))
+sys.path.append(pos_tweets)
+sys.path.append(neg_tweets)
 
 # Base code and data from: https://www.twilio.com/blog/2017/09/sentiment-analysis-python-messy-data-nltk.html
 
@@ -10,12 +18,14 @@ class Model:
 		def format_sentence(sent):
 			return({word: True for word in nltk.word_tokenize(sent)})
 		pos = []
-		with open("./TrainingData/pos_tweets.txt") as f:
+		
+		with open(pos_tweets) as f:
 			for i in f:
 				pos.append([format_sentence(i), 'pos'])
 		 
 		neg = []
-		with open("./TrainingData/neg_tweets.txt") as f:
+		with open(neg_tweets) as f:
+
 		    for i in f: 
 		        neg.append([format_sentence(i), 'neg'])
 		 

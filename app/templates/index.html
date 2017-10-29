@@ -3,19 +3,31 @@
 <link rel="stylesheet" href="../static/normalize.css">
 <link rel="stylesheet" href="../static/skeleton.css">
 <link rel="stylesheet" href="../static/main.css">
+<head>
+    <title>
+        S.H.I.T.
+    </title>
+    <link rel="shortcut icon" type="image/png" href="/favicon#.png"/>
+</head>
 {% block content %}
-{% if result == "real"%}
+{% if result%}
+{% if result.status == "real"%}
         <body style = "background-color: #dff0db">
-{% elif result == "fake" %}
-        <body style = "background-color:#ffe6e6">
-{% elif result == "trump"%}
-        <body background = "https://cdn.pixabay.com/photo/2016/03/23/09/26/donald-trump-1274400_960_720.jpg" style = "background-color:rgba(230,230,230,1)">
+{% elif result.status == "fake" %}
+        <body style = "background-color:#ffcccc">
+{% elif result.status == "trusted" %}
+        <body style = "background-color:#cceeff">
+{% elif result.status == "trump"%}
+        <body background = "/favicon#.png" style = "background-color:rgba(230,230,230,1)">
 {% else %}
         <body>
 {% endif %}
+{%else%}
+        <body>
+{% endif %}
     <div class="container">
-            <div class="twelve columns">
-              <div class="eight columns offset-by-two">
+            <div id = "twelve" class="twelve columns">
+                <div class="eight columns offset-by-two">
                   {% if result %}
                     <h2> Enter the next url to be tested!</h2><br>
                   {% else %}
@@ -25,58 +37,68 @@
                       <input type="text" placeholder="https://myurl.com/fakenews.html" name="input" id = "text" align = "center" size="50" style = "text-align:center"><br><br>
                       <input type="submit" class = "button-primary">
                   </form>
-                  {% if result == "real"%}
-                    <br><h2> This page is genuine news! </h2><br><br>
+                  {% if result %}
+                  
+                  
+                  {% if result.status == "network" %}
+                  <br><h2>Not a Valid Input</h2>
+                  <br><h4> The link provided links to a social media site and therefore is not a news article</h4>
+                  
+                  {% elif result.status == "trusted" %}
+                  <br><h2> This page is from a trusted news site</h2><br><br>
+                  <h4> The domain of this <a href = {{ request.form['input'] }}> page </a> is one of our trusted news sites and as such it is considered a genuine source of news</h4>
+
+                  {% elif result.status == "real" or result.status == "fake"%}
+                    {% if result.status == "fake" %}
+                        <a href = "https://en.wikipedia.org/wiki/Fake_news" target = "_blank"><img src = "../static/TRUMPISTANtheRECKONING.png" class = "twelve columns" ></a>
+                    {% elif result.status == "real"%}
+                    <a href = "https://random.dog" target = "_blank"><img src = "../static/TRUMPEROOtheGRACIOUS.png" class = "twelve columns" ></a>
+                    {% endif %}
                     <div class = "three columns offset-by-two">
-                            <p class = "percentage" style="font-size:50px"> 60% </p>
+                            <p class = "percentage" style="font-size:40px"> {{ result.value }}% </p>
                         </div>
                     <div id = "realdescription" class = "five columns offset-by-one">
-                        description of what this means (how sure we are etc.)
-                    </div>
+                        {% if result.value == 101 %}
+                            <p> This <a href = {{ request.form['input'] }}> article</a> is from a satire website and as such is not intended to be real or fake.</p>
+                        {% elif 10 > result.value %}
+                            <p> Though a prediction has been made we cannot be very confident in this evaluation due to the large margin of error in the software.</p>
+                        {% elif 40 > result.value %}
+                            <p> We can be reasonably confident in this prediction, as it is unlikely that a margin of error would be this high - except in edge circumstances.</p>
+                        {% else %}
+                            <p> We can be confident that this prediction is correct due to the high percentage chance</p>
+                        {% endif %}
+                        </div>
                     <br>
                     <br>
-                <div id = "positivity" class = "eight columns offset-by-two">
-                    how positive or negative this is, or for shitposts, the key words that make us think it's a shitpost
-                </div>
-                  {% elif result == "trump" %}
+                  
+                  
+                {% elif result.status == "trump" %}
                     <h1> F A K E  N E W S</h1>
-                  {% elif result == "fake" %}
-                  <br><h2> This page is fake news. </h2><br><br>
-                    <div class = "three columns offset-by-two">
-                        <p class = "percentage" style="font-size:50px"> 60% </p>
-                    </div>
-                    <div id = "realdescription" class = "five columns offset-by-one">
-                        description of what this means (how sure we are etc.)
-                    </div>
-                    <br>
-                    <br>
-                    <div id = "positivity" class = "eight columns offset-by-two">
-                        how positive or negative this is, or for shitposts, the key words that make us think it's a shitpost
-                    </div>
-                    {% elif result == "oops"%}
-        <body style = "background-color:#ffcccc;"></body>
-                        <h4 style = "color:red;"> Sorry, you must enter a numeric input currently!</h4>
+                  
+                    
+                {% elif result.status == "oops"%}
+                    <body style = "background-color:#ffcccc;"></body>
+                        <h4 style = "color:red;"> Sorry, <a href = {{ request.form['input'] }} > that page</a> wasn't a valid news url. </h4>
+                        <p style = "font-size:20px;color:red;">Please remember to include the prefix <i>http://</i> or <i>https://</i> where appropriate.</i></p>
+                    {% endif %}
                     {% else %}
-                    <h1> Fake news detector</h1>
-                    <h4> <a href = "https://en.wikipedia.org/wiki/Fake_news">From Wikipedia:</a></h4>
+                    <h3> Welcome to Spam Heuristic Internet Technologies' debut fake news detector!</h3>
+                <div>
+                    <a href = "https://en.wikipedia.org/wiki/Fake_news"><h4>From Wikipedia:</h4></a>
                   <p>
                     <i>
                         Fake news is a type of yellow journalism or propaganda that consists of deliberate misinformation or hoaxes spread via traditional print and broadcast news media or online social media. Fake news is written and published with the intent to mislead in order to damage an agency, entity, or person, and/or gain financially or politically, often with sensationalist, exaggerated, or patently false headlines that grab attention. Intentionally misleading and deceptive fake news is different from obvious satire or parody which is intended to humor rather than mislead its audience. Fake news often employs eye-catching headlines or entirely fabricated news stories to increase readership, online sharing and Internet click revenue. In the latter case, it is similar to sensational online "clickbait" headlines and relies on advertising revenue generated from this activity, regardless of the veracity of the published stories. Fake news also undermines serious media coverage and makes it more difficult for journalists to cover significant news stories.
                     </i> 
+                  </p>
+                  </div>
                     {% endif %}
                     <br><br><br><br><br><br><br><br>
-                    If you would like to stay informed on fake news in the real world, we recommend you check out the following:
-                  </p>
-                  <a href="https://twitter.com/realDonaldTrump?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @realDonaldTrump</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                   
                   <br>
                   <br>
                   <br>
                   <br>
                   <br>
-                  <footer id = "footer" style = "font-size:10px">
-                        This website was developed by <a href = "https://github.com/findoslice"> Findlay Smith</a>, the backend algorithms were developed by <a href = "https://github.com/roxerg">Rokas Gudavicius</a>, <a href = "https://github.com/karolishp">Karolis Spukas</a>, and <a href="https://github.com/jafbuya"> Ross Boyd</a>. The website relies on the open source CSS boilerplate <a href = "http://getskeleton.com"> skeleton.css</a>. We, the developers, would like to give thanks to big daddy Donald Trump for inspiring our crusade for the truth.
-                  </footer>
+                  <p> To find out more about fake news in the real world we recommend you checkout <a href = "https://twitter.com/realDonaldTrump?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">this page.</a></p>
                 </div>
             </div>
         </div>

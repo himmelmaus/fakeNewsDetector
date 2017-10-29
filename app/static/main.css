@@ -3,17 +3,14 @@ body{
     color: #7575a3;
     background-color:#f0f0f8;
 }
-a{
-    text-decoration: none;
-    color: #fff; 
-}
-a:hover{
-    color:#000;
-}
 
 .twitter-timeline{
     height: 300px;
     margin-top: -20px;
+}
+
+img{
+    padding:2%;
 }
 
 footer{
@@ -21,6 +18,7 @@ footer{
     font-size: 8px;
     position: absolute;
     margin-bottom: 5px;
+    text-align: bottom;
 }
 input {
     color: #7575a3;
@@ -39,19 +37,10 @@ input {
 .button:hover{
     background-color: #FFF;
 }
-.six.columns{
-    height: 300px;
-    border-style: solid;
-    border-width: 12px;
-    border-radius: 12%;
-    text-align: center;
-}
+
 .three.columns{
     text-align: center;
     font-size:80px;
-}
-.five.columns{
-    background-color:#00f0ff;
 }
 #realdescription{
     height:150px;
@@ -63,12 +52,9 @@ input {
 }
 #positivity {
     height: 150px;
-    background-color: yellow;
     margin-left: 20%;
 }
-.container {
-    /*background-color: #000;*/
-}
+
 .eight.columns{
     margin-top:5%;
     color: #7575a3;
@@ -97,7 +83,7 @@ input {
 .container {
     height:100%;
 }
-.twelve.columns{
+#twelve{
     height:100%;
 }
 ::-webkit-input-placeholder {

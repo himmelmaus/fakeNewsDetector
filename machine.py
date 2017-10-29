@@ -70,15 +70,25 @@ def NewsCheck(wordlist):
     
     packeddata = {}
 
-    for n in range (0, 5):
-        words = (len([w for w in wordstr if w in headings[n]]))
+
+    packeddata = {}
+
+    print ("begin loop fgt ----------------")
+    for n in range (0, len(headings)):
+        if (n > 5): 
+            continue 
+        print (n)
+        print(headings[n])
+        print(wordstr)
+        words = (len([w for w in wordstr.split(' ') if w in headings[n].split(' ')]))
         # words should be with split ?
-        if words >= len(headings[n])/2:
+        if words >= len(headings[n].split(' '))/2:
             matches += words
         else:
             matches += words/2 
         
-        if matches > 0:
+        if matches >= 2:
+            
             #temp.append(matches)
             packeddata[headings[n]] = articleurl[n]
             #temp.append(headings[n])

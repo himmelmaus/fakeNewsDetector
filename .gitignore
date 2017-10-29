@@ -1,4 +1,6 @@
-/__pycache__
+/__pycache__/
 /text.txt
 /test.py
 /testeroo.txt
+/app/testeroo.txt
+/app/test2.txt
