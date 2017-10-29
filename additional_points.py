@@ -20,10 +20,8 @@ class MoreCheck:
 				# Modal auxiliary
 				elif doc_pos_tags[i][1] in ["MD"]:
 					adverbs.append(doc_pos_tags[i][0])
-
 		print(adjectives)
-		print(adverbs)
-		print(modal)
+		return adjectives
 
 if __name__ == "__main__":
 	doc_complete = open("text.txt", "r").readlines()
