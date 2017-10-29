@@ -9,6 +9,8 @@
         <body style = "background-color: #dff0db">
 {% elif result.status == "fake" %}
         <body style = "background-color:#ffe6e6">
+{% elif result.status == "trusted" %}
+        <body style = "background-color:#cceeff"
 {% elif result.status == "trump"%}
         <body background = "https://cdn.pixabay.com/photo/2016/03/23/09/26/donald-trump-1274400_960_720.jpg" style = "background-color:rgba(230,230,230,1)">
 {% else %}
@@ -30,11 +32,18 @@
                       <input type="submit" class = "button-primary">
                   </form>
                   {% if result %}
+                  
+                  
                   {% if result.status == "network" %}
                   <br><h2>Not a Valid Input</h2>
                   <br><h4> The link provided links to a social media site and therefore is not a news article</h4>
-                  {% elif result.status == "real"%}
-                    <br><h2> The page is genuine news! </h2><br><br>
+                  
+                  {% elif result.status == "trusted" %}
+                  <br><h2> This page is from a trusted news site</h2><br><br>
+                  <h4> The domain of this <a href = {{ request.form['input'] }}> page </a> is one of our trusted news sites and as such it is considered a genuine source of news</h4>
+
+                  {% elif result.status == "real" or result.status == "fake"%}
+                    <br><h2> The page is {{ result.status }} news. </h2><br><br>
                     <div class = "three columns offset-by-two">
                             <p class = "percentage" style="font-size:40px"> {{ result.value }}% </p>
                         </div>
@@ -49,30 +58,19 @@
                         </div>
                     <br>
                     <br>
-                <div id = "positivity" class = "eight columns offset-by-two">
-                    how positive or negative this is, or for shitposts, the key words that make us think it's a shitpost
-                </div>
-                  {% elif result.status == "trump" %}
+                  
+                  
+                {% elif result.status == "trump" %}
                     <h1> F A K E  N E W S</h1>
-                  {% elif result.status == "fake" %}
-                  <br><h2> This page is fake news. </h2><br><br>
-                    <div class = "three columns offset-by-two">
-                        <p class = "percentage" style="font-size:50px"> {{ result.value }} %</p>
-                    </div>
-                    <div id = "realdescription" class = "five columns offset-by-one">
-                        description of what this means (how sure we are etc.)
-                    </div>
-                    <br>
-                    <br>
-                    <div id = "positivity" class = "eight columns offset-by-two">
-                        how positive or negative this is, or for shitposts, the key words that make us think it's a shitpost
-                    </div>
-                    {% elif result.status == "oops"%}
+                  
+                    
+                {% elif result.status == "oops"%}
                     <body style = "background-color:#ffcccc;"></body>
-                        <h4 style = "color:red;"> Sorry, {{ request.form['input'] }} wasn't a valid url</h4>
+                        <h4 style = "color:red;"> Sorry, <a href = {{ request.form['input'] }} > that page</a> wasn't a valid news url. </h4>
+                        <p style = "font-size:20px;color:red;">Please remember to include the prefix <i>http://</i> or <i>https://</i> where appropriate.</i></p>
                     {% endif %}
                     {% else %}
-                    <h4> <a href = "https://wikipedia.com">From Wikipedia:</a></h4>
+                    <h4> <a href = "https://wikipedia.com/wiki/Fake_news">From Wikipedia</a></h4>
                   <p>
                     <i>
                         Fake news is a type of yellow journalism or propaganda that consists of deliberate misinformation or hoaxes spread via traditional print and broadcast news media or online social media. Fake news is written and published with the intent to mislead in order to damage an agency, entity, or person, and/or gain financially or politically, often with sensationalist, exaggerated, or patently false headlines that grab attention. Intentionally misleading and deceptive fake news is different from obvious satire or parody which is intended to humor rather than mislead its audience. Fake news often employs eye-catching headlines or entirely fabricated news stories to increase readership, online sharing and Internet click revenue. In the latter case, it is similar to sensational online "clickbait" headlines and relies on advertising revenue generated from this activity, regardless of the veracity of the published stories. Fake news also undermines serious media coverage and makes it more difficult for journalists to cover significant news stories.

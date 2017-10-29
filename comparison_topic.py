@@ -22,7 +22,7 @@ class Comparison:
 
 		print("Score 1 " + str(total_score))
 
-		temp_score_unit = 50 / (topics_fake_length * topics_others_length)
+		temp_score_unit = 50 / (topics_fake_length * topics_others_length + 1)
 
 		#Relevance according to the topics
 		for item in topics_others:

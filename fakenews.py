@@ -14,13 +14,29 @@ def blackList(url):
             return True
     return False
 
+def whiteList(url):
+    trusted = ["independent.co.uk", "thetimes.co.uk", "nytimes.com", "washingtonpost.com", "edition.cnn.com"]
+    for address in trusted:
+        if address in url:
+            return True
+    return False
+
+def invalid(url):
+    if url.startswith("https://"):
+        return False
+    elif url.startswith("http://"):
+        return False
+    else:
+        return True
+
+
 
 def fakeNews(url):
 
     score = 0
 
     if machine.SatireCheck(url):
-        return 100 # If satire, it's fake news
+        return 100.5 # If satire, it's fake news
 
     # get the srs words
     titlekeywords = machine.FindTitle(url)
@@ -32,7 +48,7 @@ def fakeNews(url):
 
     if trump >= 2:
         return "Trump" # if it's Trump, it's almost guaranteed fake news
-    else:
+    elif trump == 1:
         score += 50.0
     # TRUMP CHECK OVER
 
@@ -44,7 +60,10 @@ def fakeNews(url):
     
 
     # get article you are evaluating text
-    mainArticleContent = article_scrape(url)
+    try:
+        mainArticleContent = article_scrape(url)
+    except:
+        return "oops"
 
     with open("testeroo.txt", 'w') as file:
         file.write(mainArticleContent)
@@ -68,7 +87,10 @@ def fakeNews(url):
     titles = [] 
     articletxt = ""
     for key in articlecompare:
-        articletxt = article_scrape(articlecompare[key])
+        try:
+            articletxt = article_scrape(articlecompare[key])
+        except:
+            return "oops"
         with open("test2.txt", 'w') as file:
             file.write(articletxt)
         with open("test2.txt", 'r') as file:
@@ -82,11 +104,14 @@ def fakeNews(url):
 
     res = scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles)
      
-    PersonBlacklist = [("Alex", "Jones"), ("Tom", "Cruise"), ("Adolf", "Hitler"), ("Findlay", "Smith")]
-    for person in PersonBlacklist:
-        if (person[0] == namestocheck[0]) and (person[1] == namestocheck[1]):
-            score += 20.0
-
+    #TODO: get rokas or karolis to remove this properly bc it just ain't workin'
+    
+    #PersonBlacklist = [("Alex", "Jones"), ("Tom", "Cruise"), ("Adolf", "Hitler"), ("Findlay", "Smith")]
+    #for person in PersonBlacklist:
+    #    if (person[0] == namestocheck[0]) and (person[1] == namestocheck[1]):
+    #        score += 20.0
+    print(score)
+    print (score+res)
     return score+res 
 
 def whySoNegative():
