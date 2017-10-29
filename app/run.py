@@ -13,6 +13,8 @@ app = Flask(__name__)
 def real(url): #placeholder function before parsing url input
     if fakenews.blackList(url):
         return {'status':'network'}
+        if fakenews.whiteList(url):
+            return {'status':'trusted'}
     if fakenews.invalid(url):
         return {'status':"oops"}
     try:

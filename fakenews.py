@@ -14,6 +14,13 @@ def blackList(url):
             return True
     return False
 
+def whiteList(url):
+    trusted = ["independent.co.uk", "thetimes.co.uk", "nytimes.com", "washingtonpost.com", "edition.cnn.com"]
+    for address in trusted:
+        if address in url:
+            return True
+    return False
+
 def invalid(url):
     if url.startswith("https://"):
         return False

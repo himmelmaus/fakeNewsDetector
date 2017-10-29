@@ -9,6 +9,8 @@
         <body style = "background-color: #dff0db">
 {% elif result.status == "fake" %}
         <body style = "background-color:#ffe6e6">
+{% elif result.status == "trusted" %}
+        <body style = "background-color:#cceeff"
 {% elif result.status == "trump"%}
         <body background = "https://cdn.pixabay.com/photo/2016/03/23/09/26/donald-trump-1274400_960_720.jpg" style = "background-color:rgba(230,230,230,1)">
 {% else %}
@@ -36,7 +38,10 @@
                   <br><h2>Not a Valid Input</h2>
                   <br><h4> The link provided links to a social media site and therefore is not a news article</h4>
                   
-                  
+                  {% elif result.status == "trusted" %}
+                  <br><h2> This page is from a trusted news site</h2><br><br>
+                  <h4> The domain of this <a href = {{ request.form['input'] }}> page </a> is one of our trusted news sites and as such it is considered a genuine source of news</h4>
+
                   {% elif result.status == "real" or result.status == "fake"%}
                     <br><h2> The page is {{ result.status }} news. </h2><br><br>
                     <div class = "three columns offset-by-two">

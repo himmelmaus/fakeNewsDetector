@@ -1,23 +1,57 @@
-At the recent Enterprise Wearable Technology Summit in Boston, Mass., speaker after speaker emphasized one thing...
+Share this:
 
-Sign in for existing members Continue Reading This Article Enjoy this article as well as all of our content, including E-Guides, news, tips and more. Step 2 of 2: You forgot to provide an Email Address. This email address doesn’t appear to be valid. This email address is already registered. Please login. You have exceeded the maximum character limit. Please provide a Corporate E-mail Address.
+Earlier this week, police investigating the Las Vegas shooting made headlines when they changed the official timeline of events in the deadly massacre on October 1.
 
-By submitting my Email address I confirm that I have read and accepted the Terms of Use and Declaration of Consent. By submitting your personal information, you agree that TechTarget and its partners may contact you regarding relevant content, products and special offers. You also agree that your personal information may be transferred and processed in the United States, and that you have read and agree to the Terms of Use and the Privacy Policy.
+We’re revolutionizing the news industry, but we need your help! Click here to get started.
 
-above all: Technology is for naught if you aren't solving a specific business problem.
+They had initially reported that gunman Stephen Paddock shot Mandalay Bay security guard Jesus Campos after he fired into the crowd at the Route 91 Harvest Festival. Campos was credited with stopping the attack. This week, the Los Angeles Times further summarized the original timeline:
 
-"Make sure that you first understand what the problem truly is, then develop the best business practice for how to address that problem," said Brian Laughlin, IT architect of mobile devices and commercial aviation services at Boeing, at the event. "Then and only then can you apply the appropriate technology."
+“In a timeline released last week, investigators said Paddock had stopped firing at the concert across the street at 10:15 p.m. and the first police officers arrived on the floor at 10:17 p.m. and encountered the wounded Campos at 10:18 p.m., who directed the officers to Paddock’s suite.”
 
-When it comes to Google, whose engineering team was at the conference to talk about the company's Google Glass device, the sage advice applies -- and doesn't.
+This summary came from a report released Monday of this week when the official story first changed. This week, Clark County Sheriff Joe Lombardo announced Paddock had fired on Campos at 9:59 pm, a full six minutes before the attack began — not after he stopped shooting into the crowd. This created new questions as to why Paddock stopped firing on concertgoers considering it apparently was not a result of Campos diverting his attention.
 
-With the development of Google Glass, the optical head-mounted display that looks like a pair of eyeglasses, the search giant seems to have operated in the reverse, inventing a device that had to discover the problem it was meant to solve.
+Now, just days later, police have again changed their timeline, clarifying that Paddock did not actually shoot Campos six minutes before the rampage began. The Chicago Tribune reports that amid claims from the MGM Hotel Group that contradict the second timeline offered Monday, authorities altered their sequence of events.
 
-Work on Google's assisted-reality eyewear certainly began with an idea of a problem to solve, said Jay Kothari, project lead for Glass at X, the moonshot factory. The ambition was to solve "the information overload problem." If Google engineers could put the world's information in your line of sight, then everyone in the world would be scrambling to get their hands on it.
+The Tribune noted that “new questions surrounding the shooting have centered on the law enforcement response and the timeline, which had been changed multiple times and challenged by MGM Resorts International, the Mandalay Bay’s owner.”
 
-That didn't happen, Kothari said. Since Google didn't really know what problem it was trying to solve with Glass, its engineers turned to "Explorers" -- qualified early adaptors -- to figure out the device's raison d'etre for them.
+The outlet explained further:
 
-"The Explorer program was an experiment for us to take Glass, put it in the market as a piece of technology and ask 'what would you do with this technology?' 'What is this finally useful for?'" Kothari said. But the quest hit a dead end. "We got such a broad set of answers" -- none of which pointed to a use case that justified the device's existence in the consumer market.
+“Lombardo had said on Monday that Campos, the guard, was shot at 9:59 p.m. and that the mass shooting began at 10:05 p.m., lasting for 10 minutes. This six-minute gap relayed by Lombardo left uncertain whether there was any lag in alerting police to the source of the gunfire during critical moments. Police said they arrived on the 32nd floor at 10:17 p.m. after Paddock had stopped firing.
 
-A new chapter for the Google Glass project But at Google, there are no failures, just course corrections. If the consumer space was a bust, then why not take this amazing solution for a problem that no one besides Google engineers seemingly wanted to solve and try it out on ... the enterprise. Eureka. "We went from what we thought was a consumer fashion device to something that's very function-oriented and has a very clear use case," Kothari said. Again, the team first had to figure out what those "clear use cases" in the enterprise would be. Working with Explorers in a variety of industries, the Google team eventually learned what its nifty creation was meant to do in the world, Kothari said. "We didn't know industries. We needed to learn them. By making [Glass] broadly available and allowing people to experiment, we were able to see what people were able to do." The biggest impact is being seen in jobs where people need to have their hands free, Kothari said. Workers, for example, can view instructions with videos, animations and images right in their line of sight, and don't have to stop and consult a binder or computer to know what to do next. Manufacturing, logistics, field service or repair, and healthcare are the four main industries Glass is focused on now, he said. The team also took a different approach to selling this technology. Kothari said they never talked about the technology; they talked about what the technology could do for a specific enterprise or use case. Google has partnered with around 50 businesses, including GE, DHL, Dignity Health, The Boeing Company and Volkswagen. A revamped Google Glass device -- with more power and better battery life -- has improved GE's mechanics' efficiency by between 8% and 12%. Package sorters at DHL have increased their efficiency by 15% by getting information projected into their line of sight via Glass, freeing up their hands. Doctors at Dignity Health have reduced the time they spend typing up patient notes and other administrative work by 33% by using Glass, Kothari touted, adding that Glass has found its groove and is moving full-steam ahead.
+“MGM, though, said it was ‘confident’ that the 9:59 p.m. time was inaccurate and ‘was derived from a Mandalay Bay report manually created after the fact without the benefit of information we now have.’ The company also disputed the suggestion of a lag and said the mass shooting began within a minute of Campos being shot on the 32nd floor.”
 
-The 'Glasshole' effect What's the lesson the Google Glass project team learned from its wearable journey? It circles back to the need to solve a specific problem for the end user, said Melvin Chua, an executive in business development at Glass. "With any sort of new technology, in order to get adoption and roll out of production you absolutely need the ROI," Chua said during the keynote. "Even if the managers wanted this and even if there was a great business case behind it, if we couldn't satisfy the wearers -- their needs and desires -- they would not put this on when they went to work." Chua also found that when testing new wearable technology on users, it's important to find people who will consistently use the device. Your face is the most expensive human real estate there is, so putting something people don't feel good wearing is tough. Jay Kothariproject lead for Glass, X, the moonshot factory From a hardware perspective, the team also learned that people cared about what it feels like to wear the device and how they look when wearing it. "Your face is the most expensive human real estate there is, so putting something people don't feel good wearing is tough," Kothari said. In the consumer pilot, for example, Glass wearers were dubbed "Glassholes" by a derisive public, which certainly didn't help users feel good about wearing the device. "We spend a lot of time grappling with the social impacts of putting a computer and a camera on somebody's face," Kothari said.
+According to a statement from MGM:
+
+“We know that shots were being fired at the festival lot at the same time as, or within 40 seconds after, the time Jesus Campos first reported that shots were fired over the radio.”
+
+The Tribune summarized Lombardo’s most recent explanation:
+
+“Upon investigation, [Lombardo] said, police learned that Campos first encountered a barricaded door on the 32nd floor at 9:59 p.m., and that he was fired upon by Paddock ‘in close proximity to’ 10:05 p.m., when police say the mass shooting began.
+
+“’He attempted to relay that information via his radio and it was confirmed because he also relayed that information via his cell phone,’ Lombardo said. ‘So the timeline associated to both of those sources have been verified.’“
+
+The sheriff did not specify when police were informed of the security guard’s report.
+
+Earlier in the week, Lombardo expressed frustration at questions over the changing timeline. “Nobody’s trying to be nefarious, nobody’s trying to hide anything, and what we want to do is draw the most accurate picture we can,” he said Wednesday.
+
+Daniel Oates, who served as police chief of Aurora, Colorado, when James Holmes opened fire on a movie theater in 2012, defended police’s changing story. “I see this as being ridiculously hard on the people who are trying to get information out, get the totality of that story,” he said. “This stuff takes time.” The Tribune reported that experts “cautioned that it can take time for even basic information about what occurred during events like the one in Las Vegas to come together” (though, in that article, the outlet did not identify specific experts beyond Oates).
+
+Either way, the jumbled timeline continues to draw questions and skepticism, exacerbated further by reports at the end of this week that Campos ‘disappeared’ shortly before he was scheduled to appear at a press conference on Thursday. The report is circulating mostly in right-wing corners of the news media; it was reported by Fox News and has been re-reported by several other right-leaning outlets. The general story appears to have been confirmed by ABC journalist Stephanie Wash, who tweeted Thursday evening: “Media scrum tonight as we learn security officer shot in Vegas attack, Jesus Campos’ whereabouts are unknown.”
+
+Media scrum tonight as we learn security officer shot in Vegas attack, Jesus Campos’ whereabouts are unknown. pic.twitter.com/Jk09tRlPsX — Stephanie Wash (@WashNews) October 13, 2017
+
+“Jesus Campos was set to do 5 in TVs tonight per union president, but they’ve lost contact. ‘We were in a room & we came out & he was gone,’” she also tweeted.
+
+Jesus Campos was set to do 5 intvs tonight per union president, but they’ve lost contact. “We were in a room & we came out & he was gone” — Stephanie Wash (@WashNews) October 13, 2017
+
+An independent journalist reported on Twitter that Campos’ family is under a gag order, however that remains unconfirmed.
+
+Despite an influx of criticism and claims of cover-ups, Lombardo insists they are simply doing their best to relay information to the public and gather information and suggested the timeline could continue to change.
+
+“There is no conspiracy between the FBI, between LVMPD and the MGM,” he said this week.
+
+“Nobody is attempting to hide anything in reference to this investigation. The dynamics and the size of this investigation require us to go through voluminous amounts of information in order to draw an accurate picture.”
+
+via
+
+Share Pin +1 Share Stumble Shares 0
