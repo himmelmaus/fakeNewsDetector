@@ -7,7 +7,7 @@ import re
 
 #testurl = "http://www.bbc.co.uk/news/world-europe-41785292/"
 
-testurl = "http://thenewyorkevening.com/2017/10/22/7-major-questions-las-vegas-shooting-need-addressed-right-now/"
+testurl = "http://www.bbc.co.uk/news/uk-41792995"
 
 def blackList(url):
     socialNetworks = ["facebook.com", "twitter.com", "tumblr.com", "instagram.com", "pinterest.com", "4chan.org","reddit.com", "myspace.com","linkedin.com"]
@@ -50,8 +50,8 @@ def fakeNews(url):
 
     if trump >= 2:
         return "Trump" # if it's Trump, it's almost guaranteed fake news
-    else:
-        pass
+    elif trump == 1:
+        score += -0.025
     # TRUMP CHECK OVER
 
     # initiate the class
@@ -98,7 +98,7 @@ def fakeNews(url):
         with open("test2.txt", 'r') as file:
             articletxt = file.readlines()
         topicothers.append(topics.FindTopics(articletxt))
-        titles.append(articlecompare[key])
+        titles.append(key)
 
     scoring = comparison_topic.Comparison
     #print(titles)
