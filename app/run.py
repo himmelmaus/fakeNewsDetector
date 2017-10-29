@@ -32,11 +32,11 @@ def real(url): #placeholder function before parsing url input
     try:
         print ('\n\n')
         print (n)
-        if n < 4:
+        if n < 4.5:
             print ('\n\n')
             print (n)
             return {'status':"fake", 'value': int((5 - n)*20) }
-        elif n >= 5:
+        elif n >= 4.5:
             return {'status':"real", 'value':int((n)*10)}
     except:
         print ('b')
