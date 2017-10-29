@@ -18,20 +18,14 @@ class Model:
 		def format_sentence(sent):
 			return({word: True for word in nltk.word_tokenize(sent)})
 		pos = []
-<<<<<<< HEAD
+		
 		with open(pos_tweets) as f:
-=======
-		with open("/pos_tweets.txt") as f:
->>>>>>> 45d7eff6839cc8f5cbb6a5a8f742bde1ef484356
 			for i in f:
 				pos.append([format_sentence(i), 'pos'])
 		 
 		neg = []
-<<<<<<< HEAD
 		with open(neg_tweets) as f:
-=======
-		with open("/neg_tweets.txt") as f:
->>>>>>> 45d7eff6839cc8f5cbb6a5a8f742bde1ef484356
+
 		    for i in f: 
 		        neg.append([format_sentence(i), 'neg'])
 		 

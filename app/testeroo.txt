@@ -1,23 +1,99 @@
-At the recent Enterprise Wearable Technology Summit in Boston, Mass., speaker after speaker emphasized one thing...
+Image copyright EPA Image caption Spain's Deputy PM Soraya Saenz de Santamaria is now officially in charge of Catalonia
 
-Sign in for existing members Continue Reading This Article Enjoy this article as well as all of our content, including E-Guides, news, tips and more. Step 2 of 2: You forgot to provide an Email Address. This email address doesn’t appear to be valid. This email address is already registered. Please login. You have exceeded the maximum character limit. Please provide a Corporate E-mail Address.
+The Spanish government has stripped Catalonia of its autonomy and taken charge of its government.
 
-By submitting my Email address I confirm that I have read and accepted the Terms of Use and Declaration of Consent. By submitting your personal information, you agree that TechTarget and its partners may contact you regarding relevant content, products and special offers. You also agree that your personal information may be transferred and processed in the United States, and that you have read and agree to the Terms of Use and the Privacy Policy.
+The measures came early on Saturday after the Catalan parliament voted to declare independence on Friday.
 
-above all: Technology is for naught if you aren't solving a specific business problem.
+An official state bulletin dismissed Catalan leaders and handed control of Catalonia to Spain's Deputy Prime Minister, Soraya Saenz de Santamaria.
 
-"Make sure that you first understand what the problem truly is, then develop the best business practice for how to address that problem," said Brian Laughlin, IT architect of mobile devices and commercial aviation services at Boeing, at the event. "Then and only then can you apply the appropriate technology."
+Catalan leader Carles Puigdemont has called for "democratic opposition" to the takeover.
 
-When it comes to Google, whose engineering team was at the conference to talk about the company's Google Glass device, the sage advice applies -- and doesn't.
+He made the call in a TV address broadcast from an undisclosed location.
 
-With the development of Google Glass, the optical head-mounted display that looks like a pair of eyeglasses, the search giant seems to have operated in the reverse, inventing a device that had to discover the problem it was meant to solve.
+Earlier, Spain's interior ministry took charge of Catalonia's police after firing senior Catalan police officials.
 
-Work on Google's assisted-reality eyewear certainly began with an idea of a problem to solve, said Jay Kothari, project lead for Glass at X, the moonshot factory. The ambition was to solve "the information overload problem." If Google engineers could put the world's information in your line of sight, then everyone in the world would be scrambling to get their hands on it.
+On Friday, PM Mariano Rajoy announced the dissolution of the regional parliament and the removal of the Catalan leader, and called snap local elections.
 
-That didn't happen, Kothari said. Since Google didn't really know what problem it was trying to solve with Glass, its engineers turned to "Explorers" -- qualified early adaptors -- to figure out the device's raison d'etre for them.
+Demonstrations for and against independence went on into the night. A large rally "for the unity of Spain and the constitution" is being held in Madrid.
 
-"The Explorer program was an experiment for us to take Glass, put it in the market as a piece of technology and ask 'what would you do with this technology?' 'What is this finally useful for?'" Kothari said. But the quest hit a dead end. "We got such a broad set of answers" -- none of which pointed to a use case that justified the device's existence in the consumer market.
+The crisis began when Catalan leaders held an independence referendum, defying a ruling by the Constitutional Court which had declared it illegal.
 
-A new chapter for the Google Glass project But at Google, there are no failures, just course corrections. If the consumer space was a bust, then why not take this amazing solution for a problem that no one besides Google engineers seemingly wanted to solve and try it out on ... the enterprise. Eureka. "We went from what we thought was a consumer fashion device to something that's very function-oriented and has a very clear use case," Kothari said. Again, the team first had to figure out what those "clear use cases" in the enterprise would be. Working with Explorers in a variety of industries, the Google team eventually learned what its nifty creation was meant to do in the world, Kothari said. "We didn't know industries. We needed to learn them. By making [Glass] broadly available and allowing people to experiment, we were able to see what people were able to do." The biggest impact is being seen in jobs where people need to have their hands free, Kothari said. Workers, for example, can view instructions with videos, animations and images right in their line of sight, and don't have to stop and consult a binder or computer to know what to do next. Manufacturing, logistics, field service or repair, and healthcare are the four main industries Glass is focused on now, he said. The team also took a different approach to selling this technology. Kothari said they never talked about the technology; they talked about what the technology could do for a specific enterprise or use case. Google has partnered with around 50 businesses, including GE, DHL, Dignity Health, The Boeing Company and Volkswagen. A revamped Google Glass device -- with more power and better battery life -- has improved GE's mechanics' efficiency by between 8% and 12%. Package sorters at DHL have increased their efficiency by 15% by getting information projected into their line of sight via Glass, freeing up their hands. Doctors at Dignity Health have reduced the time they spend typing up patient notes and other administrative work by 33% by using Glass, Kothari touted, adding that Glass has found its groove and is moving full-steam ahead.
+The Catalan government said that of the 43% of potential voters who took part, 90% were in favour of independence. Others boycotted the vote after the court ruling.
 
-The 'Glasshole' effect What's the lesson the Google Glass project team learned from its wearable journey? It circles back to the need to solve a specific problem for the end user, said Melvin Chua, an executive in business development at Glass. "With any sort of new technology, in order to get adoption and roll out of production you absolutely need the ROI," Chua said during the keynote. "Even if the managers wanted this and even if there was a great business case behind it, if we couldn't satisfy the wearers -- their needs and desires -- they would not put this on when they went to work." Chua also found that when testing new wearable technology on users, it's important to find people who will consistently use the device. Your face is the most expensive human real estate there is, so putting something people don't feel good wearing is tough. Jay Kothariproject lead for Glass, X, the moonshot factory From a hardware perspective, the team also learned that people cared about what it feels like to wear the device and how they look when wearing it. "Your face is the most expensive human real estate there is, so putting something people don't feel good wearing is tough," Kothari said. In the consumer pilot, for example, Glass wearers were dubbed "Glassholes" by a derisive public, which certainly didn't help users feel good about wearing the device. "We spend a lot of time grappling with the social impacts of putting a computer and a camera on somebody's face," Kothari said.
+What are the latest developments?
+
+Media playback is unsupported on your device Media caption At times there were tensions between the two sides
+
+On Friday afternoon, the Catalan regional parliament voted to declare independence from Spain.
+
+Soon after, the Spanish Senate granted Mr Rajoy's government the power to impose direct rule on Catalonia.
+
+It did so early on Saturday by publishing an official bulletin (in Spanish) that dismissed Mr Puigdemont and all government members.
+
+The announcement came hours after the Madrid government removed Josep Lluís Trapero Álvarez as chief of Catalonia's autonomous Mossos police force.
+
+Mr Trapero was already under investigation for sedition, accused of failing to help Spain's Guardia Civil police tackle thousands of pro-independence protesters in Barcelona during the run-up to the referendum.
+
+He was replaced by Ferran López, his deputy. Pere Soler i Campins, director general of the Mossos, was also dismissed.
+
+Image copyright AFP/Getty Images Image caption Large crowds turned out in Madrid on Saturday to support Spanish unity
+
+The BBC's Sarah Rainsford, in Madrid, said that implementing the changes is likely to be a complex process for Spanish authorities - and one bound to be met with stiff resistance from those who just voted for independence.
+
+Regional elections are scheduled for 21 December.
+
+Mr Puigdemont has urged supporters to "maintain the momentum" in a peaceful manner, but Spanish prosecutors say they will file charges of "rebellion" against him next week.
+
+Media playback is unsupported on your device Media caption The moment Catalan parliament declared independence
+
+Separatists say the independence move means they no longer fall under Spanish jurisdiction.
+
+But the Spanish Constitutional Court is likely to declare it illegal, while the EU, the US, the UK, Germany and France all expressed support for Spanish unity.
+
+What powers did Catalonia have?
+
+Before Madrid took over the Catalan government, the region had one of the greatest levels of self-government in Spain.
+
+It has its own parliament, police force and public broadcaster, as well as a government and president, though those have now been dismissed.
+
+Catalans had a range of powers in many policy areas from culture and environment to communications, transportation, commerce and public safety.
+
+Foreign affairs, the armed forces and fiscal policy were always the sole responsibility of the Spanish government.
+
+What's the reaction been?
+
+Thousands celebrated the declaration of independence on the streets of Barcelona, Catalonia's regional capital.
+
+The same crowds that cheered each Yes vote from Catalan MPs reportedly booed Mr Rajoy as he made his announcement.
+
+There were pro-unity demonstrations too, with protesters in Barcelona waving Spanish flags and denouncing Catalan independence. A large pro-unity rally is expected in Madrid on Saturday.
+
+In other reaction:
+
+Barcelona's mayor Ada Colau condemned the move by Madrid, but also criticised Catalan pro-independence parties for "advancing at a kamikaze pace...after their mistaken reading of the results of the Catalan elections"
+
+EU President Donald Tusk said Madrid's government "remains our only interlocutor" in Spain, but called for restraint
+
+The UK government said it did not recognise the declaration of independence by Catalonia.
+
+How did we get here?
+
+After the 1 October referendum, Mr Puigdemont signed a declaration of independence but delayed implementation to allow talks with the Spanish government.
+
+He ignored warnings by the Madrid government to cancel the move, prompting Mr Rajoy to first announce his plans to remove Catalan leaders and impose direct rule.
+
+Catalonia is one of Spain's richest, most distinctive regions, with a high degree of autonomy.
+
+Many Catalans feel they pay more to Madrid than they get back, and there are historical grievances, too, in particular Catalonia's treatment under the dictatorship of General Franco. But Catalans have been divided on the question of independence.
+
+Catalonia in numbers 16% of Spain's population live in Catalonia, and it produces:
+
+25.6% of Spain's exports
+
+19% of Spain's GDP
+
+20.7% of foreign investment Getty
+
+Are you in Catalonia? What is your reaction to the latest developments? You can share your views and experience by emailing haveyoursay@bbc.co.uk.
+
+Please include a contact number if you are willing to speak to a BBC journalist. You can also contact us in the following ways:

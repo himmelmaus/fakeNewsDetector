@@ -7,10 +7,19 @@ import re
 
 #testurl = "http://www.bbc.co.uk/news/world-europe-41785292/"
 
+testurl = "http://www.bbc.co.uk/news/uk-41792995"
+
 def blackList(url):
     socialNetworks = ["facebook.com", "twitter.com", "tumblr.com", "instagram.com", "pinterest.com", "4chan.org","reddit.com", "myspace.com","linkedin.com"]
     for network in socialNetworks:
         if network in url:
+            return True
+    return False
+
+def whiteList(url):
+    trusted = ["independent.co.uk", "thetimes.co.uk", "nytimes.com", "washingtonpost.com", "edition.cnn.com"]
+    for address in trusted:
+        if address in url:
             return True
     return False
 
@@ -29,7 +38,7 @@ def fakeNews(url):
     score = 0
 
     if machine.SatireCheck(url):
-        return 100.5 # If satire, it's fake news
+        return -0.05 # If satire, it's fake news
 
     # get the srs words
     titlekeywords = machine.FindTitle(url)
@@ -42,7 +51,7 @@ def fakeNews(url):
     if trump >= 2:
         return "Trump" # if it's Trump, it's almost guaranteed fake news
     elif trump == 1:
-        score += 50.0
+        score += -0.025
     # TRUMP CHECK OVER
 
     # initiate the class
@@ -89,7 +98,7 @@ def fakeNews(url):
         with open("test2.txt", 'r') as file:
             articletxt = file.readlines()
         topicothers.append(topics.FindTopics(articletxt))
-        titles.append(articlecompare[key])
+        titles.append(key)
 
     scoring = comparison_topic.Comparison
     #print(titles)
@@ -120,5 +129,5 @@ def whySoNegative():
 
 
 
-#if __name__ == "__main__":
-#    main(url)
+if __name__ == "__main__":
+    fakeNews(testurl)
