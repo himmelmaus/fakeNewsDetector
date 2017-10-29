@@ -35,12 +35,17 @@ class Comparison:
 			print("Score 2 " + str(total_score))
 
 			# Headlines score
+			print ("headlines score:")
+			print (headlines_others)
 			if len(headlines_others) != 0:
 				onepts = 15/len(headlines_others)
 				for headline in headlines_others:
-					score_tmp = len([w for w in headline.split(' ') if w in headline_main.split(' ')])
-					if score_tmp >= len(headline)/2:
+					score_tmp = len([w for w in headline.split(' ') if w in headline_main])
+					print (score_tmp)
+					if score_tmp >= 3:
 						total_score += onepts 
+						print (total_score)
+
 
 		print("Score 3 " + str(total_score))
 
