@@ -30,7 +30,6 @@ def real(url): #placeholder function before parsing url input
     except:
         pass
     try:
-        print ('\n\n')
         print (n)
         if n < 4.5:
             print ('\n\n')
@@ -44,11 +43,20 @@ def real(url): #placeholder function before parsing url input
         return {'status':"oops"}
 
 
+
 @app.route('/', methods=['GET','POST'])
 def print_form():
     if request.method == 'POST': #code to be executed when submit button is pushed
-        result = request.form['input']                                                                                                                         
-        return render_template('index.html', result=real(request.form['input']))
+        try:
+            result = request.form['input']
+            result = real(result)
+        except:
+            result = {'status':"oops"}   
+        finally:
+            try:                                                                                                      
+                return render_template('index.html', result=result)
+            except:
+                return render_template('index.html', result={'status':"oops"})
     if request.method == 'GET': #base text
         return render_template('index.html')
 
