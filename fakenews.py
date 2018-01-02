@@ -2,12 +2,13 @@ import machine
 import article_topics
 import comparison_topic
 import sentiment_analysis
+import additional_points
 from article_scraper import article_scrape
 import re
 
 #testurl = "http://www.bbc.co.uk/news/world-europe-41785292/"
 
-testurl = "http://www.bbc.co.uk/news/uk-41792995"
+testurl = "http://www.bbc.co.uk/news/world-europe-41785292"
 
 def blackList(url):
     socialNetworks = ["facebook.com", "twitter.com", "tumblr.com", "instagram.com", "pinterest.com", "4chan.org","reddit.com", "myspace.com","linkedin.com"]
@@ -50,8 +51,8 @@ def fakeNews(url):
 
     if trump >= 2:
         return "Trump" # if it's Trump, it's almost guaranteed fake news
-    elif trump == 1:
-        score += -0.025
+    else:
+        pass
     # TRUMP CHECK OVER
 
     # initiate the class
@@ -84,6 +85,8 @@ def fakeNews(url):
     # 1. the title/description
     # 2. article url
     # 3. topics
+    additional_fake_others = []
+
     articlecompare = machine.NewsCheck(titlekeywords)
     topicothers = []
     titles = [] 
@@ -99,12 +102,15 @@ def fakeNews(url):
             articletxt = file.readlines()
         topicothers.append(topics.FindTopics(articletxt))
         titles.append(key)
+        additional_fake_others.append(additional_points.MoreCheck.checkMore(articletxt))
 
     scoring = comparison_topic.Comparison
     #print(titles)
     negativity = sentiment_analysis.Model
 
-    res = scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles)
+    additional_fake = additional_points.MoreCheck.checkMore(mainArticleContent)
+
+    res = scoring.compare(mainArticleTopics, topicothers, titlekeywords, titles, additional_fake, additional_fake_others)
      
     #TODO: get rokas or karolis to remove this properly bc it just ain't workin'
     
