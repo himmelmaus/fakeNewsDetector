@@ -1,4 +1,6 @@
-# Fake News Detector
+![picc](https://github.com/findoslice/fakeNewsDetector/blob/master/app/static/TRUMPISTAN.png "logo")
+
+
 Have you got the GUTS 2017, Spam Heuristic Internet Technologies team
 
 ## Description
